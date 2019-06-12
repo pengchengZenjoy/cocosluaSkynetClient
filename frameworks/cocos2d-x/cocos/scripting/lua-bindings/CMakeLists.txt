@@ -38,6 +38,7 @@ set(lua_bindings_manual_headers
     manual/pbc/lpack.h
     manual/pbc/pbc-lua.h
     manual/pbc/lua_cocos2dx_pbc_manual.h
+    manual/pbc/skynet-crypt.h
     )
 
 set(lua_bindings_manual_files
@@ -83,6 +84,8 @@ set(lua_bindings_manual_files
     manual/pbc/lpack.c
     manual/pbc/pbc-lua.c
     manual/pbc/lua_cocos2dx_pbc_manual.cpp
+    manual/pbc/skynet-crypt.c
+    manual/pbc/lsha1.c
     )
 
 set(lua_bindings_auto_headers

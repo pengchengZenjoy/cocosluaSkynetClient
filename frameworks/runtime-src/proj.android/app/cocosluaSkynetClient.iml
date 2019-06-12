@@ -229,6 +229,9 @@
     <content url="file://$MODULE_DIR$/../../../cocos2d-x/cocos/scripting/lua-bindings/manual/network">
       <sourceFolder url="file://$MODULE_DIR$/../../../cocos2d-x/cocos/scripting/lua-bindings/manual/network" isTestSource="false" />
     </content>
+    <content url="file://$MODULE_DIR$/../../../cocos2d-x/cocos/scripting/lua-bindings/manual/pbc">
+      <sourceFolder url="file://$MODULE_DIR$/../../../cocos2d-x/cocos/scripting/lua-bindings/manual/pbc" isTestSource="false" />
+    </content>
     <content url="file://$MODULE_DIR$/../../../cocos2d-x/cocos/scripting/lua-bindings/manual/physics3d">
       <sourceFolder url="file://$MODULE_DIR$/../../../cocos2d-x/cocos/scripting/lua-bindings/manual/physics3d" isTestSource="false" />
     </content>
@@ -300,6 +303,9 @@
     </content>
     <content url="file://$MODULE_DIR$/../../../cocos2d-x/external/md5">
       <sourceFolder url="file://$MODULE_DIR$/../../../cocos2d-x/external/md5" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../../cocos2d-x/external/pbc">
+      <sourceFolder url="file://$MODULE_DIR$/../../../cocos2d-x/external/pbc" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/../../../cocos2d-x/external/poly2tri/common">
       <sourceFolder url="file://$MODULE_DIR$/../../../cocos2d-x/external/poly2tri/common" isTestSource="false" />
@@ -413,7 +419,6 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/javaPrecompile" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/jniLibs" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/lint" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/manifests" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/prebuild" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/res" />

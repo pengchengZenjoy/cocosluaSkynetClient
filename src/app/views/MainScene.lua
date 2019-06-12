@@ -9,7 +9,8 @@ function MainScene:onCreate()
         :move(display.center)
         :addTo(self)]]
 
-    print("pc77 ")
+    local randomKey = skynet.randomkey()
+    print("pc77 randomKey = "..tostring(randomKey))
     print(_VERSION)
 
     local btn = ccui.Button:create("edit_bg_big.png", "edit_bg_big.png", "edit_bg_big.png", 0)

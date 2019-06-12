@@ -25,6 +25,15 @@
 		0480061322B0F2B600D19EC0 /* lua_cocos2dx_pbc_manual.h in Headers */ = {isa = PBXBuildFile; fileRef = 0480060122B0F2B200D19EC0 /* lua_cocos2dx_pbc_manual.h */; };
 		0480061422B0F2B600D19EC0 /* lpack.c in Sources */ = {isa = PBXBuildFile; fileRef = 0480060222B0F2B200D19EC0 /* lpack.c */; };
 		0480061522B0F2B600D19EC0 /* pbc-lua.c in Sources */ = {isa = PBXBuildFile; fileRef = 0480060322B0F2B200D19EC0 /* pbc-lua.c */; };
+		0480061822B1090B00D19EC0 /* skynet-crypt.h in Headers */ = {isa = PBXBuildFile; fileRef = 0480061622B1090B00D19EC0 /* skynet-crypt.h */; };
+		0480061922B1090B00D19EC0 /* skynet-crypt.h in Headers */ = {isa = PBXBuildFile; fileRef = 0480061622B1090B00D19EC0 /* skynet-crypt.h */; };
+		0480061A22B1090B00D19EC0 /* skynet-crypt.h in Headers */ = {isa = PBXBuildFile; fileRef = 0480061622B1090B00D19EC0 /* skynet-crypt.h */; };
+		0480061B22B1090B00D19EC0 /* skynet-crypt.c in Sources */ = {isa = PBXBuildFile; fileRef = 0480061722B1090B00D19EC0 /* skynet-crypt.c */; };
+		0480061C22B1090B00D19EC0 /* skynet-crypt.c in Sources */ = {isa = PBXBuildFile; fileRef = 0480061722B1090B00D19EC0 /* skynet-crypt.c */; };
+		0480061D22B1090B00D19EC0 /* skynet-crypt.c in Sources */ = {isa = PBXBuildFile; fileRef = 0480061722B1090B00D19EC0 /* skynet-crypt.c */; };
+		0480061F22B111C100D19EC0 /* lsha1.c in Sources */ = {isa = PBXBuildFile; fileRef = 0480061E22B111C100D19EC0 /* lsha1.c */; };
+		0480062022B111C100D19EC0 /* lsha1.c in Sources */ = {isa = PBXBuildFile; fileRef = 0480061E22B111C100D19EC0 /* lsha1.c */; };
+		0480062122B111C200D19EC0 /* lsha1.c in Sources */ = {isa = PBXBuildFile; fileRef = 0480061E22B111C100D19EC0 /* lsha1.c */; };
 		150906F019D556C5002C4D97 /* lua_cocos2dx_audioengine_auto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E2BDB0319C5E5FE0055CDCD /* lua_cocos2dx_audioengine_auto.cpp */; };
 		150906F119D556C8002C4D97 /* lua_cocos2dx_audioengine_auto.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 3E2BDB0419C5E5FE0055CDCD /* lua_cocos2dx_audioengine_auto.hpp */; };
 		150906F219D556CE002C4D97 /* lua_cocos2dx_audioengine_manual.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E2BDB0819C5E6100055CDCD /* lua_cocos2dx_audioengine_manual.cpp */; };
@@ -473,6 +482,9 @@
 		0480060122B0F2B200D19EC0 /* lua_cocos2dx_pbc_manual.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lua_cocos2dx_pbc_manual.h; sourceTree = "<group>"; };
 		0480060222B0F2B200D19EC0 /* lpack.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lpack.c; sourceTree = "<group>"; };
 		0480060322B0F2B200D19EC0 /* pbc-lua.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "pbc-lua.c"; sourceTree = "<group>"; };
+		0480061622B1090B00D19EC0 /* skynet-crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "skynet-crypt.h"; sourceTree = "<group>"; };
+		0480061722B1090B00D19EC0 /* skynet-crypt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "skynet-crypt.c"; sourceTree = "<group>"; };
+		0480061E22B111C100D19EC0 /* lsha1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lsha1.c; sourceTree = "<group>"; };
 		150983CE1B1C0554007F3818 /* lua_cocos2dx_navmesh_auto.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_cocos2dx_navmesh_auto.cpp; sourceTree = "<group>"; };
 		150983CF1B1C0554007F3818 /* lua_cocos2dx_navmesh_auto.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = lua_cocos2dx_navmesh_auto.hpp; sourceTree = "<group>"; };
 		150983D51B1C3F3E007F3818 /* lua_cocos2dx_navmesh_manual.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lua_cocos2dx_navmesh_manual.cpp; path = navmesh/lua_cocos2dx_navmesh_manual.cpp; sourceTree = "<group>"; };
@@ -668,6 +680,9 @@
 		048005FD22B0F2B200D19EC0 /* pbc */ = {
 			isa = PBXGroup;
 			children = (
+				0480061E22B111C100D19EC0 /* lsha1.c */,
+				0480061722B1090B00D19EC0 /* skynet-crypt.c */,
+				0480061622B1090B00D19EC0 /* skynet-crypt.h */,
 				048005FE22B0F2B200D19EC0 /* pbc-lua.h */,
 				048005FF22B0F2B200D19EC0 /* lpack.h */,
 				0480060022B0F2B200D19EC0 /* lua_cocos2dx_pbc_manual.cpp */,
@@ -1089,6 +1104,7 @@
 				15B575511A6F4D1500041C20 /* lua-cocos-studio-conversions.h in Headers */,
 				15C1C2EA19874CBE00A46ACC /* CCLuaValue.h in Headers */,
 				155C7E0C19A71C9000F08B25 /* lua_cocos2dx_network_manual.h in Headers */,
+				0480061822B1090B00D19EC0 /* skynet-crypt.h in Headers */,
 				15C1C2EB19874CBE00A46ACC /* Cocos2dxLuaLoader.h in Headers */,
 				15C1C2EC19874CBE00A46ACC /* LuaBasicConversions.h in Headers */,
 				15415AB319A71A53004F1E71 /* inet.h in Headers */,
@@ -1168,6 +1184,7 @@
 				15EFA63D198B32BB000C57D3 /* CCLuaStack.h in Headers */,
 				15B575521A6F4D1500041C20 /* lua-cocos-studio-conversions.h in Headers */,
 				15EFA63E198B32BB000C57D3 /* CCLuaValue.h in Headers */,
+				0480061922B1090B00D19EC0 /* skynet-crypt.h in Headers */,
 				155C7E0D19A71C9300F08B25 /* lua_cocos2dx_network_manual.h in Headers */,
 				15EFA63F198B32BB000C57D3 /* Cocos2dxLuaLoader.h in Headers */,
 				15EFA640198B32BB000C57D3 /* LuaBasicConversions.h in Headers */,
@@ -1247,6 +1264,7 @@
 				507B432B1C31FA0C0067B53E /* CCLuaStack.h in Headers */,
 				507B432C1C31FA0C0067B53E /* lua-cocos-studio-conversions.h in Headers */,
 				507B432D1C31FA0C0067B53E /* CCLuaValue.h in Headers */,
+				0480061A22B1090B00D19EC0 /* skynet-crypt.h in Headers */,
 				507B432E1C31FA0C0067B53E /* lua_cocos2dx_network_manual.h in Headers */,
 				507B432F1C31FA0C0067B53E /* Cocos2dxLuaLoader.h in Headers */,
 				507B43301C31FA0C0067B53E /* LuaBasicConversions.h in Headers */,
@@ -1375,6 +1393,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				15415A7219A718FB004F1E71 /* lua_cocos2dx_3d_auto.cpp in Sources */,
+				0480061F22B111C100D19EC0 /* lsha1.c in Sources */,
 				15415A7319A718FB004F1E71 /* lua_cocos2dx_cocosbuilder_auto.cpp in Sources */,
 				150906F219D556CE002C4D97 /* lua_cocos2dx_audioengine_manual.cpp in Sources */,
 				15415A7519A718FB004F1E71 /* lua_cocos2dx_experimental_video_auto.cpp in Sources */,
@@ -1432,6 +1451,7 @@
 				15415AD119A71A53004F1E71 /* timeout.c in Sources */,
 				0480060922B0F2B200D19EC0 /* pbc-lua.c in Sources */,
 				15C1C2CF1987498B00A46ACC /* lua_cocos2dx_deprecated.cpp in Sources */,
+				0480061B22B1090B00D19EC0 /* skynet-crypt.c in Sources */,
 				155C7E2219A71CD300F08B25 /* lua_cocos2dx_experimental_video_manual.cpp in Sources */,
 				155C7DFA19A71C4C00F08B25 /* lua_cocos2dx_coco_studio_manual.cpp in Sources */,
 				0480060822B0F2B200D19EC0 /* lpack.c in Sources */,
@@ -1469,6 +1489,7 @@
 				15EFA647198B3311000C57D3 /* tolua_is.c in Sources */,
 				15EFA648198B3311000C57D3 /* tolua_map.c in Sources */,
 				15EFA649198B3311000C57D3 /* tolua_push.c in Sources */,
+				0480061C22B1090B00D19EC0 /* skynet-crypt.c in Sources */,
 				15EFA64A198B3311000C57D3 /* tolua_to.c in Sources */,
 				15415AC219A71A53004F1E71 /* options.c in Sources */,
 				15EFA645198B32DB000C57D3 /* xxtea.cpp in Sources */,
@@ -1521,6 +1542,7 @@
 				15415AAE19A71A53004F1E71 /* except.c in Sources */,
 				15C9A10E1AE4972500C15443 /* lua_cocos2dx_experimental_webview_auto.cpp in Sources */,
 				15415AAA19A71A53004F1E71 /* buffer.c in Sources */,
+				0480062022B111C100D19EC0 /* lsha1.c in Sources */,
 				155C7E2319A71CD500F08B25 /* lua_cocos2dx_experimental_video_manual.cpp in Sources */,
 				150983D81B1C3F3E007F3818 /* lua_cocos2dx_navmesh_manual.cpp in Sources */,
 				155C7DFB19A71C4E00F08B25 /* lua_cocos2dx_coco_studio_manual.cpp in Sources */,
@@ -1556,6 +1578,7 @@
 				507B42C41C31FA0C0067B53E /* tolua_is.c in Sources */,
 				507B42C51C31FA0C0067B53E /* tolua_map.c in Sources */,
 				507B42C61C31FA0C0067B53E /* tolua_push.c in Sources */,
+				0480061D22B1090B00D19EC0 /* skynet-crypt.c in Sources */,
 				507B42C71C31FA0C0067B53E /* tolua_to.c in Sources */,
 				507B42C81C31FA0C0067B53E /* options.c in Sources */,
 				507B42C91C31FA0C0067B53E /* xxtea.cpp in Sources */,
@@ -1608,6 +1631,7 @@
 				507B42F51C31FA0C0067B53E /* except.c in Sources */,
 				507B42F61C31FA0C0067B53E /* lua_cocos2dx_experimental_webview_auto.cpp in Sources */,
 				507B42F71C31FA0C0067B53E /* buffer.c in Sources */,
+				0480062122B111C200D19EC0 /* lsha1.c in Sources */,
 				507B42F81C31FA0C0067B53E /* lua_cocos2dx_experimental_video_manual.cpp in Sources */,
 				507B42F91C31FA0C0067B53E /* lua_cocos2dx_navmesh_manual.cpp in Sources */,
 				507B42FA1C31FA0C0067B53E /* lua_cocos2dx_coco_studio_manual.cpp in Sources */,

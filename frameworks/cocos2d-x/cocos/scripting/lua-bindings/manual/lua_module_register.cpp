@@ -37,6 +37,7 @@
 #include "scripting/lua-bindings/manual/navmesh/lua_cocos2dx_navmesh_manual.h"
 #include "scripting/lua-bindings/manual/pbc/lua_cocos2dx_pbc_manual.h"
 #include "scripting/lua-bindings/manual/pbc/lpack.h"
+#include "scripting/lua-bindings/manual/pbc/skynet-crypt.h"
 
 int lua_module_register(lua_State* L)
 {
@@ -52,6 +53,7 @@ int lua_module_register(lua_State* L)
     register_audioengine_module(L);
     register_pbc_module(L);
     luaopen_pack(L);
+    luaopen_skynet_crypt(L);
 #if CC_USE_3D_PHYSICS && CC_ENABLE_BULLET_INTEGRATION
     register_physics3d_module(L);
 #endif
