@@ -142,6 +142,8 @@ LOCAL_SRC_FILES += ../manual/navmesh/lua_cocos2dx_navmesh_conversions.cpp \
 LOCAL_SRC_FILES += ../manual/pbc/lpack.c \
                    ../manual/pbc/pbc-lua.c \
                    ../manual/pbc/lua_cocos2dx_pbc_manual.cpp \
+                   ../manual/pbc/skynet-crypt.c \
+                   ../manual/pbc/lsha1.c
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../../../external/lua/tolua \
                     $(LUA_INCLUDE_PATH) \
