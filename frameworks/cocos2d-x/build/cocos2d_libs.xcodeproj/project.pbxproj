@@ -7,6 +7,78 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		048005B522B0F29400D19EC0 /* varint.h in Headers */ = {isa = PBXBuildFile; fileRef = 0480059D22B0F29400D19EC0 /* varint.h */; };
+		048005B622B0F29400D19EC0 /* proto.h in Headers */ = {isa = PBXBuildFile; fileRef = 0480059E22B0F29400D19EC0 /* proto.h */; };
+		048005B722B0F29400D19EC0 /* descriptor.pbc.h in Headers */ = {isa = PBXBuildFile; fileRef = 0480059F22B0F29400D19EC0 /* descriptor.pbc.h */; };
+		048005B822B0F29400D19EC0 /* array.c in Sources */ = {isa = PBXBuildFile; fileRef = 048005A022B0F29400D19EC0 /* array.c */; };
+		048005B922B0F29400D19EC0 /* map.h in Headers */ = {isa = PBXBuildFile; fileRef = 048005A122B0F29400D19EC0 /* map.h */; };
+		048005BA22B0F29400D19EC0 /* rmessage.c in Sources */ = {isa = PBXBuildFile; fileRef = 048005A222B0F29400D19EC0 /* rmessage.c */; };
+		048005BB22B0F29400D19EC0 /* register.c in Sources */ = {isa = PBXBuildFile; fileRef = 048005A322B0F29400D19EC0 /* register.c */; };
+		048005BC22B0F29400D19EC0 /* context.h in Headers */ = {isa = PBXBuildFile; fileRef = 048005A422B0F29400D19EC0 /* context.h */; };
+		048005BD22B0F29400D19EC0 /* decode.c in Sources */ = {isa = PBXBuildFile; fileRef = 048005A522B0F29400D19EC0 /* decode.c */; };
+		048005BE22B0F29400D19EC0 /* stringpool.c in Sources */ = {isa = PBXBuildFile; fileRef = 048005A622B0F29400D19EC0 /* stringpool.c */; };
+		048005BF22B0F29400D19EC0 /* bootstrap.h in Headers */ = {isa = PBXBuildFile; fileRef = 048005A722B0F29400D19EC0 /* bootstrap.h */; };
+		048005C022B0F29400D19EC0 /* pattern.h in Headers */ = {isa = PBXBuildFile; fileRef = 048005A822B0F29400D19EC0 /* pattern.h */; };
+		048005C122B0F29400D19EC0 /* alloc.c in Sources */ = {isa = PBXBuildFile; fileRef = 048005A922B0F29400D19EC0 /* alloc.c */; };
+		048005C222B0F29400D19EC0 /* varint.c in Sources */ = {isa = PBXBuildFile; fileRef = 048005AA22B0F29400D19EC0 /* varint.c */; };
+		048005C322B0F29400D19EC0 /* array.h in Headers */ = {isa = PBXBuildFile; fileRef = 048005AB22B0F29400D19EC0 /* array.h */; };
+		048005C422B0F29400D19EC0 /* map.c in Sources */ = {isa = PBXBuildFile; fileRef = 048005AC22B0F29400D19EC0 /* map.c */; };
+		048005C522B0F29400D19EC0 /* proto.c in Sources */ = {isa = PBXBuildFile; fileRef = 048005AD22B0F29400D19EC0 /* proto.c */; };
+		048005C622B0F29400D19EC0 /* context.c in Sources */ = {isa = PBXBuildFile; fileRef = 048005AE22B0F29400D19EC0 /* context.c */; };
+		048005C722B0F29400D19EC0 /* pbc.h in Headers */ = {isa = PBXBuildFile; fileRef = 048005AF22B0F29400D19EC0 /* pbc.h */; };
+		048005C822B0F29400D19EC0 /* wmessage.c in Sources */ = {isa = PBXBuildFile; fileRef = 048005B022B0F29400D19EC0 /* wmessage.c */; };
+		048005C922B0F29400D19EC0 /* alloc.h in Headers */ = {isa = PBXBuildFile; fileRef = 048005B122B0F29400D19EC0 /* alloc.h */; };
+		048005CA22B0F29400D19EC0 /* pattern.c in Sources */ = {isa = PBXBuildFile; fileRef = 048005B222B0F29400D19EC0 /* pattern.c */; };
+		048005CB22B0F29400D19EC0 /* bootstrap.c in Sources */ = {isa = PBXBuildFile; fileRef = 048005B322B0F29400D19EC0 /* bootstrap.c */; };
+		048005CC22B0F29400D19EC0 /* stringpool.h in Headers */ = {isa = PBXBuildFile; fileRef = 048005B422B0F29400D19EC0 /* stringpool.h */; };
+		048005CD22B0F29D00D19EC0 /* varint.h in Headers */ = {isa = PBXBuildFile; fileRef = 0480059D22B0F29400D19EC0 /* varint.h */; };
+		048005CE22B0F29D00D19EC0 /* proto.h in Headers */ = {isa = PBXBuildFile; fileRef = 0480059E22B0F29400D19EC0 /* proto.h */; };
+		048005CF22B0F29D00D19EC0 /* descriptor.pbc.h in Headers */ = {isa = PBXBuildFile; fileRef = 0480059F22B0F29400D19EC0 /* descriptor.pbc.h */; };
+		048005D022B0F29D00D19EC0 /* array.c in Sources */ = {isa = PBXBuildFile; fileRef = 048005A022B0F29400D19EC0 /* array.c */; };
+		048005D122B0F29D00D19EC0 /* map.h in Headers */ = {isa = PBXBuildFile; fileRef = 048005A122B0F29400D19EC0 /* map.h */; };
+		048005D222B0F29D00D19EC0 /* rmessage.c in Sources */ = {isa = PBXBuildFile; fileRef = 048005A222B0F29400D19EC0 /* rmessage.c */; };
+		048005D322B0F29D00D19EC0 /* register.c in Sources */ = {isa = PBXBuildFile; fileRef = 048005A322B0F29400D19EC0 /* register.c */; };
+		048005D422B0F29D00D19EC0 /* context.h in Headers */ = {isa = PBXBuildFile; fileRef = 048005A422B0F29400D19EC0 /* context.h */; };
+		048005D522B0F29D00D19EC0 /* decode.c in Sources */ = {isa = PBXBuildFile; fileRef = 048005A522B0F29400D19EC0 /* decode.c */; };
+		048005D622B0F29D00D19EC0 /* stringpool.c in Sources */ = {isa = PBXBuildFile; fileRef = 048005A622B0F29400D19EC0 /* stringpool.c */; };
+		048005D722B0F29D00D19EC0 /* bootstrap.h in Headers */ = {isa = PBXBuildFile; fileRef = 048005A722B0F29400D19EC0 /* bootstrap.h */; };
+		048005D822B0F29D00D19EC0 /* pattern.h in Headers */ = {isa = PBXBuildFile; fileRef = 048005A822B0F29400D19EC0 /* pattern.h */; };
+		048005D922B0F29D00D19EC0 /* alloc.c in Sources */ = {isa = PBXBuildFile; fileRef = 048005A922B0F29400D19EC0 /* alloc.c */; };
+		048005DA22B0F29D00D19EC0 /* varint.c in Sources */ = {isa = PBXBuildFile; fileRef = 048005AA22B0F29400D19EC0 /* varint.c */; };
+		048005DB22B0F29D00D19EC0 /* array.h in Headers */ = {isa = PBXBuildFile; fileRef = 048005AB22B0F29400D19EC0 /* array.h */; };
+		048005DC22B0F29D00D19EC0 /* map.c in Sources */ = {isa = PBXBuildFile; fileRef = 048005AC22B0F29400D19EC0 /* map.c */; };
+		048005DD22B0F29D00D19EC0 /* proto.c in Sources */ = {isa = PBXBuildFile; fileRef = 048005AD22B0F29400D19EC0 /* proto.c */; };
+		048005DE22B0F29D00D19EC0 /* context.c in Sources */ = {isa = PBXBuildFile; fileRef = 048005AE22B0F29400D19EC0 /* context.c */; };
+		048005DF22B0F29D00D19EC0 /* pbc.h in Headers */ = {isa = PBXBuildFile; fileRef = 048005AF22B0F29400D19EC0 /* pbc.h */; };
+		048005E022B0F29D00D19EC0 /* wmessage.c in Sources */ = {isa = PBXBuildFile; fileRef = 048005B022B0F29400D19EC0 /* wmessage.c */; };
+		048005E122B0F29D00D19EC0 /* alloc.h in Headers */ = {isa = PBXBuildFile; fileRef = 048005B122B0F29400D19EC0 /* alloc.h */; };
+		048005E222B0F29D00D19EC0 /* pattern.c in Sources */ = {isa = PBXBuildFile; fileRef = 048005B222B0F29400D19EC0 /* pattern.c */; };
+		048005E322B0F29D00D19EC0 /* bootstrap.c in Sources */ = {isa = PBXBuildFile; fileRef = 048005B322B0F29400D19EC0 /* bootstrap.c */; };
+		048005E422B0F29D00D19EC0 /* stringpool.h in Headers */ = {isa = PBXBuildFile; fileRef = 048005B422B0F29400D19EC0 /* stringpool.h */; };
+		048005E522B0F29E00D19EC0 /* varint.h in Headers */ = {isa = PBXBuildFile; fileRef = 0480059D22B0F29400D19EC0 /* varint.h */; };
+		048005E622B0F29E00D19EC0 /* proto.h in Headers */ = {isa = PBXBuildFile; fileRef = 0480059E22B0F29400D19EC0 /* proto.h */; };
+		048005E722B0F29E00D19EC0 /* descriptor.pbc.h in Headers */ = {isa = PBXBuildFile; fileRef = 0480059F22B0F29400D19EC0 /* descriptor.pbc.h */; };
+		048005E822B0F29E00D19EC0 /* array.c in Sources */ = {isa = PBXBuildFile; fileRef = 048005A022B0F29400D19EC0 /* array.c */; };
+		048005E922B0F29E00D19EC0 /* map.h in Headers */ = {isa = PBXBuildFile; fileRef = 048005A122B0F29400D19EC0 /* map.h */; };
+		048005EA22B0F29E00D19EC0 /* rmessage.c in Sources */ = {isa = PBXBuildFile; fileRef = 048005A222B0F29400D19EC0 /* rmessage.c */; };
+		048005EB22B0F29E00D19EC0 /* register.c in Sources */ = {isa = PBXBuildFile; fileRef = 048005A322B0F29400D19EC0 /* register.c */; };
+		048005EC22B0F29E00D19EC0 /* context.h in Headers */ = {isa = PBXBuildFile; fileRef = 048005A422B0F29400D19EC0 /* context.h */; };
+		048005ED22B0F29E00D19EC0 /* decode.c in Sources */ = {isa = PBXBuildFile; fileRef = 048005A522B0F29400D19EC0 /* decode.c */; };
+		048005EE22B0F29E00D19EC0 /* stringpool.c in Sources */ = {isa = PBXBuildFile; fileRef = 048005A622B0F29400D19EC0 /* stringpool.c */; };
+		048005EF22B0F29E00D19EC0 /* bootstrap.h in Headers */ = {isa = PBXBuildFile; fileRef = 048005A722B0F29400D19EC0 /* bootstrap.h */; };
+		048005F022B0F29E00D19EC0 /* pattern.h in Headers */ = {isa = PBXBuildFile; fileRef = 048005A822B0F29400D19EC0 /* pattern.h */; };
+		048005F122B0F29E00D19EC0 /* alloc.c in Sources */ = {isa = PBXBuildFile; fileRef = 048005A922B0F29400D19EC0 /* alloc.c */; };
+		048005F222B0F29E00D19EC0 /* varint.c in Sources */ = {isa = PBXBuildFile; fileRef = 048005AA22B0F29400D19EC0 /* varint.c */; };
+		048005F322B0F29E00D19EC0 /* array.h in Headers */ = {isa = PBXBuildFile; fileRef = 048005AB22B0F29400D19EC0 /* array.h */; };
+		048005F422B0F29E00D19EC0 /* map.c in Sources */ = {isa = PBXBuildFile; fileRef = 048005AC22B0F29400D19EC0 /* map.c */; };
+		048005F522B0F29E00D19EC0 /* proto.c in Sources */ = {isa = PBXBuildFile; fileRef = 048005AD22B0F29400D19EC0 /* proto.c */; };
+		048005F622B0F29E00D19EC0 /* context.c in Sources */ = {isa = PBXBuildFile; fileRef = 048005AE22B0F29400D19EC0 /* context.c */; };
+		048005F722B0F29E00D19EC0 /* pbc.h in Headers */ = {isa = PBXBuildFile; fileRef = 048005AF22B0F29400D19EC0 /* pbc.h */; };
+		048005F822B0F29E00D19EC0 /* wmessage.c in Sources */ = {isa = PBXBuildFile; fileRef = 048005B022B0F29400D19EC0 /* wmessage.c */; };
+		048005F922B0F29E00D19EC0 /* alloc.h in Headers */ = {isa = PBXBuildFile; fileRef = 048005B122B0F29400D19EC0 /* alloc.h */; };
+		048005FA22B0F29E00D19EC0 /* pattern.c in Sources */ = {isa = PBXBuildFile; fileRef = 048005B222B0F29400D19EC0 /* pattern.c */; };
+		048005FB22B0F29E00D19EC0 /* bootstrap.c in Sources */ = {isa = PBXBuildFile; fileRef = 048005B322B0F29400D19EC0 /* bootstrap.c */; };
+		048005FC22B0F29E00D19EC0 /* stringpool.h in Headers */ = {isa = PBXBuildFile; fileRef = 048005B422B0F29400D19EC0 /* stringpool.h */; };
 		0C261F281BE7528900707478 /* Light3DReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C261F261BE7528900707478 /* Light3DReader.cpp */; };
 		0C261F291BE7528900707478 /* Light3DReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C261F261BE7528900707478 /* Light3DReader.cpp */; };
 		0C261F2A1BE7528900707478 /* Light3DReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C261F271BE7528900707478 /* Light3DReader.h */; };
@@ -4470,6 +4542,30 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0480059D22B0F29400D19EC0 /* varint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = varint.h; sourceTree = "<group>"; };
+		0480059E22B0F29400D19EC0 /* proto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = proto.h; sourceTree = "<group>"; };
+		0480059F22B0F29400D19EC0 /* descriptor.pbc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = descriptor.pbc.h; sourceTree = "<group>"; };
+		048005A022B0F29400D19EC0 /* array.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = array.c; sourceTree = "<group>"; };
+		048005A122B0F29400D19EC0 /* map.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = map.h; sourceTree = "<group>"; };
+		048005A222B0F29400D19EC0 /* rmessage.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rmessage.c; sourceTree = "<group>"; };
+		048005A322B0F29400D19EC0 /* register.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = register.c; sourceTree = "<group>"; };
+		048005A422B0F29400D19EC0 /* context.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = context.h; sourceTree = "<group>"; };
+		048005A522B0F29400D19EC0 /* decode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = decode.c; sourceTree = "<group>"; };
+		048005A622B0F29400D19EC0 /* stringpool.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = stringpool.c; sourceTree = "<group>"; };
+		048005A722B0F29400D19EC0 /* bootstrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bootstrap.h; sourceTree = "<group>"; };
+		048005A822B0F29400D19EC0 /* pattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pattern.h; sourceTree = "<group>"; };
+		048005A922B0F29400D19EC0 /* alloc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = alloc.c; sourceTree = "<group>"; };
+		048005AA22B0F29400D19EC0 /* varint.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = varint.c; sourceTree = "<group>"; };
+		048005AB22B0F29400D19EC0 /* array.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = array.h; sourceTree = "<group>"; };
+		048005AC22B0F29400D19EC0 /* map.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = map.c; sourceTree = "<group>"; };
+		048005AD22B0F29400D19EC0 /* proto.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = proto.c; sourceTree = "<group>"; };
+		048005AE22B0F29400D19EC0 /* context.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = context.c; sourceTree = "<group>"; };
+		048005AF22B0F29400D19EC0 /* pbc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pbc.h; sourceTree = "<group>"; };
+		048005B022B0F29400D19EC0 /* wmessage.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wmessage.c; sourceTree = "<group>"; };
+		048005B122B0F29400D19EC0 /* alloc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = alloc.h; sourceTree = "<group>"; };
+		048005B222B0F29400D19EC0 /* pattern.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pattern.c; sourceTree = "<group>"; };
+		048005B322B0F29400D19EC0 /* bootstrap.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bootstrap.c; sourceTree = "<group>"; };
+		048005B422B0F29400D19EC0 /* stringpool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stringpool.h; sourceTree = "<group>"; };
 		0634A4C5194B19E400E608AF /* CCActionTimeline.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCActionTimeline.cpp; sourceTree = "<group>"; };
 		0634A4C6194B19E400E608AF /* CCActionTimeline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCActionTimeline.h; sourceTree = "<group>"; };
 		0634A4C7194B19E400E608AF /* CCActionTimelineCache.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCActionTimelineCache.cpp; sourceTree = "<group>"; };
@@ -6161,6 +6257,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0480059C22B0F29400D19EC0 /* pbc */ = {
+			isa = PBXGroup;
+			children = (
+				0480059D22B0F29400D19EC0 /* varint.h */,
+				0480059E22B0F29400D19EC0 /* proto.h */,
+				0480059F22B0F29400D19EC0 /* descriptor.pbc.h */,
+				048005A022B0F29400D19EC0 /* array.c */,
+				048005A122B0F29400D19EC0 /* map.h */,
+				048005A222B0F29400D19EC0 /* rmessage.c */,
+				048005A322B0F29400D19EC0 /* register.c */,
+				048005A422B0F29400D19EC0 /* context.h */,
+				048005A522B0F29400D19EC0 /* decode.c */,
+				048005A622B0F29400D19EC0 /* stringpool.c */,
+				048005A722B0F29400D19EC0 /* bootstrap.h */,
+				048005A822B0F29400D19EC0 /* pattern.h */,
+				048005A922B0F29400D19EC0 /* alloc.c */,
+				048005AA22B0F29400D19EC0 /* varint.c */,
+				048005AB22B0F29400D19EC0 /* array.h */,
+				048005AC22B0F29400D19EC0 /* map.c */,
+				048005AD22B0F29400D19EC0 /* proto.c */,
+				048005AE22B0F29400D19EC0 /* context.c */,
+				048005AF22B0F29400D19EC0 /* pbc.h */,
+				048005B022B0F29400D19EC0 /* wmessage.c */,
+				048005B122B0F29400D19EC0 /* alloc.h */,
+				048005B222B0F29400D19EC0 /* pattern.c */,
+				048005B322B0F29400D19EC0 /* bootstrap.c */,
+				048005B422B0F29400D19EC0 /* stringpool.h */,
+			);
+			name = pbc;
+			path = ../external/pbc;
+			sourceTree = "<group>";
+		};
 		0634A4C4194B19E400E608AF /* ActionTimeline */ = {
 			isa = PBXGroup;
 			children = (
@@ -6767,6 +6895,7 @@
 		1A57033E180BD0490088DEC7 /* external */ = {
 			isa = PBXGroup;
 			children = (
+				0480059C22B0F29400D19EC0 /* pbc */,
 				1A40D0D91E8E4C76002E363A /* md5 */,
 				68B39B391B1C5C670084F72C /* clipper */,
 				B6DD2F731B04820C00E47F5F /* recast */,
@@ -9107,6 +9236,7 @@
 				B665E4381AA80A6600DDB1C5 /* CCPUVortexAffector.h in Headers */,
 				50ABBD461925AB0000A911A9 /* CCVertex.h in Headers */,
 				B63990CE1A490AFE00B07923 /* CCAsyncTaskPool.h in Headers */,
+				048005BF22B0F29400D19EC0 /* bootstrap.h in Headers */,
 				B6CAAFF81AF9A9E100B9B856 /* CCPhysics3DShape.h in Headers */,
 				B665E2201AA80A6500DDB1C5 /* CCPUBehaviourManager.h in Headers */,
 				15AE180A19AAD2F700C27E9E /* CCAABB.h in Headers */,
@@ -9151,6 +9281,7 @@
 				15AE196D19AAD35700C27E9E /* CCActionTimeline.h in Headers */,
 				3E2F27A719CFBFE400E7C490 /* AudioEngine.h in Headers */,
 				15AE183A19AAD2F700C27E9E /* CCRay.h in Headers */,
+				048005BC22B0F29400D19EC0 /* context.h in Headers */,
 				5020A1D11D49912500E80C72 /* PathConstraintData.h in Headers */,
 				15AE18A319AAD33D00C27E9E /* CCParticleSystemQuadLoader.h in Headers */,
 				15FB20761AE7BF8600C31518 /* CCAutoPolygon.h in Headers */,
@@ -9165,6 +9296,7 @@
 				50ABBEC11925AB6F00A911A9 /* CCValue.h in Headers */,
 				1A40D1421E8E56C7002E363A /* strfunc.h in Headers */,
 				B276EF631988D1D500CD400F /* CCVertexIndexBuffer.h in Headers */,
+				048005B622B0F29400D19EC0 /* proto.h in Headers */,
 				5020A20D1D49912500E80C72 /* Slot.h in Headers */,
 				50ABBE871925AB6F00A911A9 /* ccMacros.h in Headers */,
 				B665E32C1AA80A6500DDB1C5 /* CCPUOnCountObserver.h in Headers */,
@@ -9241,6 +9373,7 @@
 				15AE184819AAD2F700C27E9E /* cocos3d.h in Headers */,
 				50ABBEC31925AB6F00A911A9 /* CCVector.h in Headers */,
 				1A57008B180BC5A10088DEC7 /* CCActionProgressTimer.h in Headers */,
+				048005C922B0F29400D19EC0 /* alloc.h in Headers */,
 				B665E2EC1AA80A6500DDB1C5 /* CCPULinearForceAffectorTranslator.h in Headers */,
 				382384151A259092002C4610 /* NodeReaderProtocol.h in Headers */,
 				B665E2DC1AA80A6500DDB1C5 /* CCPUJetAffectorTranslator.h in Headers */,
@@ -9272,6 +9405,7 @@
 				D0FD035B1A3B51AA00825BB5 /* CCAllocatorStrategyFixedBlock.h in Headers */,
 				15AE190819AAD35000C27E9E /* CCDatas.h in Headers */,
 				B665E3281AA80A6500DDB1C5 /* CCPUOnCollisionObserverTranslator.h in Headers */,
+				048005C722B0F29400D19EC0 /* pbc.h in Headers */,
 				1A40D10C1E8E56C7002E363A /* document-wrapper.h in Headers */,
 				5020A1591D49912500E80C72 /* AnimationState.h in Headers */,
 				1A5700A0180BC5D20088DEC7 /* CCNode.h in Headers */,
@@ -9312,6 +9446,7 @@
 				15AE18E919AAD35000C27E9E /* CCActionManagerEx.h in Headers */,
 				1A01C68618F57BE800EFE3A6 /* CCArray.h in Headers */,
 				1A5701A7180BCB590088DEC7 /* CCFontAtlasCache.h in Headers */,
+				048005B922B0F29400D19EC0 /* map.h in Headers */,
 				50864CEA1C7BC90A00B3BAB1 /* cpCompat62.h in Headers */,
 				B68779021A8CA82E00643ABF /* CCParticle3DRender.h in Headers */,
 				15AE1B6C19AADA9900C27E9E /* UIWidget.h in Headers */,
@@ -9475,6 +9610,7 @@
 				B6DD2FDF1B04825B00E47F5F /* DetourObstacleAvoidance.h in Headers */,
 				50643BE219BFCF1800EF68ED /* CCPlatformConfig.h in Headers */,
 				382384031A259005002C4610 /* CSParseBinary_generated.h in Headers */,
+				048005B522B0F29400D19EC0 /* varint.h in Headers */,
 				5034CA49191D591100CE6051 /* ccShader_Label_df.frag in Headers */,
 				292DB14119B4574100A80320 /* UIEditBoxImpl.h in Headers */,
 				A045F6D81BA81577005076C7 /* CCTextureCube.h in Headers */,
@@ -9610,6 +9746,7 @@
 				1A570302180BCE890088DEC7 /* CCParallaxNode.h in Headers */,
 				50ABBE4B1925AB6F00A911A9 /* CCEventAcceleration.h in Headers */,
 				1A57030E180BCF190088DEC7 /* CCComponent.h in Headers */,
+				048005B722B0F29400D19EC0 /* descriptor.pbc.h in Headers */,
 				50FC3FA81D74C2A1001C936A /* CCEventListenerController.h in Headers */,
 				B665E2AC1AA80A6500DDB1C5 /* CCPUFlockCenteringAffector.h in Headers */,
 				5020A19B1D49912500E80C72 /* Event.h in Headers */,
@@ -9642,6 +9779,7 @@
 				50864CB81C7BC1B000B3BAB1 /* cpMarch.h in Headers */,
 				1A57034D180BD09B0088DEC7 /* tinyxml2.h in Headers */,
 				15AE18F519AAD35000C27E9E /* CCArmatureDefine.h in Headers */,
+				048005C022B0F29400D19EC0 /* pattern.h in Headers */,
 				15AE188219AAD33D00C27E9E /* CCBReader.h in Headers */,
 				1A570356180BD0B00088DEC7 /* ioapi.h in Headers */,
 				15AE191819AAD35000C27E9E /* CCSpriteFrameCacheHelper.h in Headers */,
@@ -9711,6 +9849,7 @@
 				15AE1BCF19AAE01E00C27E9E /* CCControlExtensions.h in Headers */,
 				50643BD919BFAF4400EF68ED /* CCApplication.h in Headers */,
 				46BDE4CC1FA86C7F00104C05 /* SkeletonClipping.h in Headers */,
+				048005C322B0F29400D19EC0 /* array.h in Headers */,
 				B665E3581AA80A6500DDB1C5 /* CCPUOnQuotaObserverTranslator.h in Headers */,
 				5020A2071D49912500E80C72 /* Skin.h in Headers */,
 				B665E3DC1AA80A6600DDB1C5 /* CCPUScriptTranslator.h in Headers */,
@@ -9778,6 +9917,7 @@
 				1A40D1391E8E56C7002E363A /* pow10.h in Headers */,
 				1A01C69E18F57BE800EFE3A6 /* CCString.h in Headers */,
 				50ABC00F1926664800A911A9 /* CCFileUtils.h in Headers */,
+				048005CC22B0F29400D19EC0 /* stringpool.h in Headers */,
 				503341991D9DC7B400770EC7 /* kvec.h in Headers */,
 				B665E2981AA80A6500DDB1C5 /* CCPUEmitterManager.h in Headers */,
 				182C5CAE1A95961600C30D34 /* CSParse3DBinary_generated.h in Headers */,
@@ -9920,6 +10060,7 @@
 				507B3D371C31BDD30067B53E /* CCPUForceField.h in Headers */,
 				507B3D391C31BDD30067B53E /* CCPUJetAffector.h in Headers */,
 				507B3D3A1C31BDD30067B53E /* CCEventListenerAssetsManagerEx.h in Headers */,
+				048005EF22B0F29E00D19EC0 /* bootstrap.h in Headers */,
 				1A40D1291E8E56C7002E363A /* biginteger.h in Headers */,
 				507B3D3C1C31BDD30067B53E /* CCAllocatorGlobal.h in Headers */,
 				94A6DF0A1C7304120094AEF7 /* LocalizationManager.h in Headers */,
@@ -9964,6 +10105,7 @@
 				1A40D13B1E8E56C7002E363A /* pow10.h in Headers */,
 				507B3D721C31BDD30067B53E /* UIRadioButton.h in Headers */,
 				507B3D731C31BDD30067B53E /* CCPUDoStopSystemEventHandlerTranslator.h in Headers */,
+				048005EC22B0F29E00D19EC0 /* context.h in Headers */,
 				507B3D741C31BDD30067B53E /* CCSprite3DMaterial.h in Headers */,
 				1A40D16E1E8E56C7002E363A /* stream.h in Headers */,
 				50864CD21C7BC1B100B3BAB1 /* cpShape.h in Headers */,
@@ -9978,6 +10120,7 @@
 				507B3D7F1C31BDD30067B53E /* CCValue.h in Headers */,
 				507B3D801C31BDD30067B53E /* CCUIMultilineTextField.h in Headers */,
 				507B3D821C31BDD30067B53E /* firePngData.h in Headers */,
+				048005E622B0F29E00D19EC0 /* proto.h in Headers */,
 				507B3D831C31BDD30067B53E /* CCPrimitive.h in Headers */,
 				1A40D1321E8E56C7002E363A /* ieee754.h in Headers */,
 				507B3D841C31BDD30067B53E /* CCPlatformConfig.h in Headers */,
@@ -10054,6 +10197,7 @@
 				507B3DD91C31BDD30067B53E /* FlatBuffersSerialize.h in Headers */,
 				50864CAB1C7BC1B000B3BAB1 /* cpDampedRotarySpring.h in Headers */,
 				507B3DDB1C31BDD30067B53E /* CCActionInterval.h in Headers */,
+				048005F922B0F29E00D19EC0 /* alloc.h in Headers */,
 				507B3DDC1C31BDD30067B53E /* CCPUEventHandler.h in Headers */,
 				1A40D1261E8E56C7002E363A /* fwd.h in Headers */,
 				507B3DDD1C31BDD30067B53E /* CCActionFrame.h in Headers */,
@@ -10085,6 +10229,7 @@
 				507B3DFD1C31BDD30067B53E /* CCNode.h in Headers */,
 				507B3DFE1C31BDD30067B53E /* CCAttachNode.h in Headers */,
 				507B3E001C31BDD30067B53E /* UIEditBoxImpl-mac.h in Headers */,
+				048005F722B0F29E00D19EC0 /* pbc.h in Headers */,
 				507B3E011C31BDD30067B53E /* CCControlHuePicker.h in Headers */,
 				507B3E021C31BDD30067B53E /* CCPUOnRandomObserverTranslator.h in Headers */,
 				507B3E031C31BDD30067B53E /* CCPUObserver.h in Headers */,
@@ -10125,6 +10270,7 @@
 				507B3E241C31BDD30067B53E /* CCEventAcceleration.h in Headers */,
 				507B3E251C31BDD30067B53E /* CCPUListener.h in Headers */,
 				507B3E271C31BDD30067B53E /* TransformUtils.h in Headers */,
+				048005E922B0F29E00D19EC0 /* map.h in Headers */,
 				507B3E281C31BDD30067B53E /* CCPUDoFreezeEventHandlerTranslator.h in Headers */,
 				507B3E291C31BDD30067B53E /* CCDrawNode.h in Headers */,
 				507B3E2A1C31BDD30067B53E /* CCNavMeshDebugDraw.h in Headers */,
@@ -10288,6 +10434,7 @@
 				507B3EF81C31BDD30067B53E /* CCPUDoExpireEventHandler.h in Headers */,
 				507B3EF91C31BDD30067B53E /* shapes.h in Headers */,
 				507B3EFA1C31BDD30067B53E /* CCScheduler.h in Headers */,
+				048005E522B0F29E00D19EC0 /* varint.h in Headers */,
 				507B3EFC1C31BDD30067B53E /* CCMotionStreak.h in Headers */,
 				507B3EFD1C31BDD30067B53E /* CCPUBehaviourManager.h in Headers */,
 				507B3EFE1C31BDD30067B53E /* CCDecorativeDisplay.h in Headers */,
@@ -10423,6 +10570,7 @@
 				507B3FA41C31BDD30067B53E /* CCBKeyframe.h in Headers */,
 				507B3FA51C31BDD30067B53E /* CCLayerGradientLoader.h in Headers */,
 				507B3FA71C31BDD30067B53E /* CCPUOnPositionObserverTranslator.h in Headers */,
+				048005E722B0F29E00D19EC0 /* descriptor.pbc.h in Headers */,
 				507B3FA91C31BDD30067B53E /* CCComponentContainer.h in Headers */,
 				507B3FAB1C31BDD30067B53E /* CCTextureCube.h in Headers */,
 				507B3FAD1C31BDD30067B53E /* CCPULineEmitterTranslator.h in Headers */,
@@ -10455,6 +10603,7 @@
 				507B3FCD1C31BDD30067B53E /* utlist.h in Headers */,
 				507B3FCE1C31BDD30067B53E /* unzip.h in Headers */,
 				507B3FD11C31BDD30067B53E /* UIHBox.h in Headers */,
+				048005F022B0F29E00D19EC0 /* pattern.h in Headers */,
 				507B3FD31C31BDD30067B53E /* CCProperties.h in Headers */,
 				507B3FD51C31BDD30067B53E /* ccShader_Label_normal.frag in Headers */,
 				507B3FD91C31BDD30067B53E /* CCSkeleton3D.h in Headers */,
@@ -10524,6 +10673,7 @@
 				507B402F1C31BDD30067B53E /* CCApplication-ios.h in Headers */,
 				507B40311C31BDD30067B53E /* CCPUTechniqueTranslator.h in Headers */,
 				46BDE4EE1FA87D6700104C05 /* SkeletonClipping.h in Headers */,
+				048005F322B0F29E00D19EC0 /* array.h in Headers */,
 				507B40321C31BDD30067B53E /* UITextBMFont.h in Headers */,
 				507B40341C31BDD30067B53E /* CCGLProgram.h in Headers */,
 				507B40351C31BDD30067B53E /* CSLoader.h in Headers */,
@@ -10591,6 +10741,7 @@
 				5020A20F1D49912500E80C72 /* Slot.h in Headers */,
 				507B407E1C31BDD30067B53E /* CCString.h in Headers */,
 				507B407F1C31BDD30067B53E /* pvr.h in Headers */,
+				048005FC22B0F29E00D19EC0 /* stringpool.h in Headers */,
 				507B40821C31BDD30067B53E /* CCComAudio.h in Headers */,
 				507B40831C31BDD30067B53E /* CCDictionary.h in Headers */,
 				507B40841C31BDD30067B53E /* CCPUOnClearObserverTranslator.h in Headers */,
@@ -10733,6 +10884,7 @@
 				15FB208C1AE7C57D00C31518 /* utils.h in Headers */,
 				B665E2B51AA80A6500DDB1C5 /* CCPUForceField.h in Headers */,
 				B665E2D91AA80A6500DDB1C5 /* CCPUJetAffector.h in Headers */,
+				048005D722B0F29D00D19EC0 /* bootstrap.h in Headers */,
 				15B3708319EE414C00ABE682 /* CCEventListenerAssetsManagerEx.h in Headers */,
 				1A40D1281E8E56C7002E363A /* biginteger.h in Headers */,
 				D0FD03521A3B51AA00825BB5 /* CCAllocatorGlobal.h in Headers */,
@@ -10777,6 +10929,7 @@
 				1A40D13A1E8E56C7002E363A /* pow10.h in Headers */,
 				B6DD2FD41B04825B00E47F5F /* DetourStatus.h in Headers */,
 				B5CE6DCB1B3C05BA002B0419 /* UIRadioButton.h in Headers */,
+				048005D422B0F29D00D19EC0 /* context.h in Headers */,
 				B665E2891AA80A6500DDB1C5 /* CCPUDoStopSystemEventHandlerTranslator.h in Headers */,
 				1A40D16D1E8E56C7002E363A /* stream.h in Headers */,
 				15AE184719AAD2F700C27E9E /* CCSprite3DMaterial.h in Headers */,
@@ -10791,6 +10944,7 @@
 				50ABBEC21925AB6F00A911A9 /* CCValue.h in Headers */,
 				2980F0241BA9A5550059E678 /* CCUIMultilineTextField.h in Headers */,
 				50ABBECA1925AB6F00A911A9 /* firePngData.h in Headers */,
+				048005CE22B0F29D00D19EC0 /* proto.h in Headers */,
 				B257B4511989D5E800D9A687 /* CCPrimitive.h in Headers */,
 				1A40D1311E8E56C7002E363A /* ieee754.h in Headers */,
 				50643BE319BFCF1800EF68ED /* CCPlatformConfig.h in Headers */,
@@ -10867,6 +11021,7 @@
 				15AE1BC019AADFF000C27E9E /* WebSocket.h in Headers */,
 				B665E2FD1AA80A6500DDB1C5 /* CCPUMaterialManager.h in Headers */,
 				3823840A1A25900F002C4610 /* FlatBuffersSerialize.h in Headers */,
+				048005E122B0F29D00D19EC0 /* alloc.h in Headers */,
 				50864CAA1C7BC1B000B3BAB1 /* cpDampedRotarySpring.h in Headers */,
 				1A40D1251E8E56C7002E363A /* fwd.h in Headers */,
 				1A570080180BC5A10088DEC7 /* CCActionInterval.h in Headers */,
@@ -10898,6 +11053,7 @@
 				15AE181919AAD2F700C27E9E /* CCAttachNode.h in Headers */,
 				292DB14C19B4574100A80320 /* UIEditBoxImpl-mac.h in Headers */,
 				5020A2291D49912500E80C72 /* TransformConstraintData.h in Headers */,
+				048005DF22B0F29D00D19EC0 /* pbc.h in Headers */,
 				15AE1BF019AAE01E00C27E9E /* CCControlHuePicker.h in Headers */,
 				B665E3611AA80A6500DDB1C5 /* CCPUOnRandomObserverTranslator.h in Headers */,
 				B665E3111AA80A6500DDB1C5 /* CCPUObserver.h in Headers */,
@@ -10938,6 +11094,7 @@
 				50ABBD571925AB0000A911A9 /* TransformUtils.h in Headers */,
 				B665E2711AA80A6500DDB1C5 /* CCPUDoFreezeEventHandlerTranslator.h in Headers */,
 				1A570115180BC8EE0088DEC7 /* CCDrawNode.h in Headers */,
+				048005D122B0F29D00D19EC0 /* map.h in Headers */,
 				B677B0D41B18492D006762CB /* CCNavMeshDebugDraw.h in Headers */,
 				1A57011E180BC90D0088DEC7 /* CCGrabber.h in Headers */,
 				1A570122180BC90D0088DEC7 /* CCGrid.h in Headers */,
@@ -11101,6 +11258,7 @@
 				15AE1C0419AAE01E00C27E9E /* CCTableView.h in Headers */,
 				B665E3A51AA80A6500DDB1C5 /* CCPUPositionEmitterTranslator.h in Headers */,
 				B68779071A8CA82E00643ABF /* CCParticleSystem3D.h in Headers */,
+				048005CD22B0F29D00D19EC0 /* varint.h in Headers */,
 				B665E2651AA80A6500DDB1C5 /* CCPUDoExpireEventHandler.h in Headers */,
 				15FB208A1AE7C57D00C31518 /* shapes.h in Headers */,
 				50ABBEA21925AB6F00A911A9 /* CCScheduler.h in Headers */,
@@ -11236,6 +11394,7 @@
 				B665E3511AA80A6500DDB1C5 /* CCPUOnPositionObserverTranslator.h in Headers */,
 				1A570313180BCF190088DEC7 /* CCComponentContainer.h in Headers */,
 				A045F6D91BA81577005076C7 /* CCTextureCube.h in Headers */,
+				048005CF22B0F29D00D19EC0 /* descriptor.pbc.h in Headers */,
 				B665E2F51AA80A6500DDB1C5 /* CCPULineEmitterTranslator.h in Headers */,
 				1A087AEB1860400400196EF5 /* edtaa3func.h in Headers */,
 				B665E3751AA80A6500DDB1C5 /* CCPUParticleFollower.h in Headers */,
@@ -11268,6 +11427,7 @@
 				50ABBED61925AB6F00A911A9 /* utlist.h in Headers */,
 				1A57035B180BD0B00088DEC7 /* unzip.h in Headers */,
 				15AE1BA619AADFDF00C27E9E /* UIHBox.h in Headers */,
+				048005D822B0F29D00D19EC0 /* pattern.h in Headers */,
 				505385031B01887A00793096 /* CCProperties.h in Headers */,
 				5034CA48191D591100CE6051 /* ccShader_Label_normal.frag in Headers */,
 				5020A1841D49912500E80C72 /* Bone.h in Headers */,
@@ -11337,6 +11497,7 @@
 				15AE182B19AAD2F700C27E9E /* CCMeshSkin.h in Headers */,
 				B665E2251AA80A6500DDB1C5 /* CCPUBehaviourTranslator.h in Headers */,
 				46BDE4ED1FA87D6600104C05 /* SkeletonClipping.h in Headers */,
+				048005DB22B0F29D00D19EC0 /* array.h in Headers */,
 				B665E3651AA80A6500DDB1C5 /* CCPUOnTimeObserver.h in Headers */,
 				15AE1B7D19AADA9A00C27E9E /* UISlider.h in Headers */,
 				503DD8E01926736A00CD74DD /* CCApplication-ios.h in Headers */,
@@ -11404,6 +11565,7 @@
 				15AE193D19AAD35100C27E9E /* CCArmatureDefine.h in Headers */,
 				382384041A259005002C4610 /* CSParseBinary_generated.h in Headers */,
 				15AE195419AAD35100C27E9E /* CCDisplayFactory.h in Headers */,
+				048005E422B0F29D00D19EC0 /* stringpool.h in Headers */,
 				1A9DCA2A180E6955007A3AD4 /* CCGLBufferedNode.h in Headers */,
 				1A01C69F18F57BE800EFE3A6 /* CCString.h in Headers */,
 				464AD6E8197EBB1400E502D8 /* pvr.h in Headers */,
@@ -11579,6 +11741,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 1551A334158F2AB200E66CFE;
@@ -11663,6 +11826,7 @@
 				15AE186A19AAD31D00C27E9E /* CocosDenshion.m in Sources */,
 				B665E3C21AA80A6600DDB1C5 /* CCPUScaleAffectorTranslator.cpp in Sources */,
 				B665E34A1AA80A6500DDB1C5 /* CCPUOnPositionObserver.cpp in Sources */,
+				048005C122B0F29400D19EC0 /* alloc.c in Sources */,
 				15AE198C19AAD36E00C27E9E /* CheckBoxReader.cpp in Sources */,
 				B665E4261AA80A6600DDB1C5 /* CCPUUtil.cpp in Sources */,
 				15AE1B6319AADA9900C27E9E /* UICheckBox.cpp in Sources */,
@@ -11678,6 +11842,7 @@
 				5E9F612A1A3FFE3D0038DE01 /* CCPlane.cpp in Sources */,
 				15AE197419AAD35700C27E9E /* CCTimeLine.cpp in Sources */,
 				B665E4061AA80A6600DDB1C5 /* CCPUSphereSurfaceEmitter.cpp in Sources */,
+				048005C622B0F29400D19EC0 /* context.c in Sources */,
 				B665E30E1AA80A6500DDB1C5 /* CCPUObserver.cpp in Sources */,
 				15AE188E19AAD33D00C27E9E /* CCLabelTTFLoader.cpp in Sources */,
 				B665E37E1AA80A6500DDB1C5 /* CCPUParticleSystem3DTranslator.cpp in Sources */,
@@ -11819,6 +11984,7 @@
 				1A5701B1180BCB590088DEC7 /* CCFontFNT.cpp in Sources */,
 				15AE181619AAD2F700C27E9E /* CCAttachNode.cpp in Sources */,
 				B6DD2FE91B04825B00E47F5F /* DetourProximityGrid.cpp in Sources */,
+				048005C522B0F29400D19EC0 /* proto.c in Sources */,
 				18956BB21A9DFBFD006E9155 /* Particle3DReader.cpp in Sources */,
 				1A5701B5180BCB590088DEC7 /* CCFontFreeType.cpp in Sources */,
 				1A5701B9180BCB5A0088DEC7 /* CCLabel.cpp in Sources */,
@@ -11902,6 +12068,7 @@
 				5020A1921D49912500E80C72 /* Cocos2dAttachmentLoader.cpp in Sources */,
 				46BDE4CD1FA86C7F00104C05 /* SkeletonTwoColorBatch.cpp in Sources */,
 				B665E3B21AA80A6500DDB1C5 /* CCPURendererTranslator.cpp in Sources */,
+				048005CA22B0F29400D19EC0 /* pattern.c in Sources */,
 				15AE1BC919AAE01E00C27E9E /* CCControl.cpp in Sources */,
 				C50306751B60B5B2001E6D43 /* BoneNodeReader.cpp in Sources */,
 				5070031B1B69735200E83DDD /* HttpClient-android.cpp in Sources */,
@@ -11962,6 +12129,7 @@
 				B665E34E1AA80A6500DDB1C5 /* CCPUOnPositionObserverTranslator.cpp in Sources */,
 				15AE190F19AAD35000C27E9E /* CCInputDelegate.cpp in Sources */,
 				15AE181A19AAD2F700C27E9E /* CCBundle3D.cpp in Sources */,
+				048005C222B0F29400D19EC0 /* varint.c in Sources */,
 				B665E3BE1AA80A6500DDB1C5 /* CCPUScaleAffector.cpp in Sources */,
 				15B3708019EE414C00ABE682 /* CCEventListenerAssetsManagerEx.cpp in Sources */,
 				1A570292180BCCAB0088DEC7 /* CCAnimation.cpp in Sources */,
@@ -11985,6 +12153,7 @@
 				B665E3721AA80A6500DDB1C5 /* CCPUParticleFollower.cpp in Sources */,
 				1A5702C8180BCE370088DEC7 /* CCTextFieldTTF.cpp in Sources */,
 				B665E2861AA80A6500DDB1C5 /* CCPUDoStopSystemEventHandlerTranslator.cpp in Sources */,
+				048005C422B0F29400D19EC0 /* map.c in Sources */,
 				15AE1B5519AADA9900C27E9E /* UIScrollView.cpp in Sources */,
 				46BDE4CB1FA86C7F00104C05 /* SkeletonClipping.c in Sources */,
 				15AE191919AAD35000C27E9E /* CCSSceneReader.cpp in Sources */,
@@ -12039,12 +12208,16 @@
 				15FB20741AE7BF8600C31518 /* CCAutoPolygon.cpp in Sources */,
 				B665E2A61AA80A6500DDB1C5 /* CCPUEventHandlerTranslator.cpp in Sources */,
 				B665E2E61AA80A6500DDB1C5 /* CCPULinearForceAffector.cpp in Sources */,
+				048005B822B0F29400D19EC0 /* array.c in Sources */,
+				048005C822B0F29400D19EC0 /* wmessage.c in Sources */,
+				048005BD22B0F29400D19EC0 /* decode.c in Sources */,
 				15AE192219AAD35000C27E9E /* DictionaryHelper.cpp in Sources */,
 				15AE196C19AAD35700C27E9E /* CCActionTimeline.cpp in Sources */,
 				1A570310180BCF190088DEC7 /* CCComponentContainer.cpp in Sources */,
 				15AE190719AAD35000C27E9E /* CCDatas.cpp in Sources */,
 				1A01C69C18F57BE800EFE3A6 /* CCString.cpp in Sources */,
 				5020A1E61D49912500E80C72 /* SkeletonBatch.cpp in Sources */,
+				048005CB22B0F29400D19EC0 /* bootstrap.c in Sources */,
 				B6DD2FCB1B04825B00E47F5F /* DetourNavMeshQuery.cpp in Sources */,
 				50FC3F9E1D74C0A3001C936A /* CCController.cpp in Sources */,
 				B665E2721AA80A6500DDB1C5 /* CCPUDoPlacementParticleEventHandler.cpp in Sources */,
@@ -12084,6 +12257,7 @@
 				50CB247719D9C5A100687767 /* AudioCache.mm in Sources */,
 				B665E25E1AA80A6500DDB1C5 /* CCPUDoEnableComponentEventHandlerTranslator.cpp in Sources */,
 				15AE18FA19AAD35000C27E9E /* CCColliderDetector.cpp in Sources */,
+				048005BA22B0F29400D19EC0 /* rmessage.c in Sources */,
 				50ABBEA71925AB6F00A911A9 /* CCTouch.cpp in Sources */,
 				15AE191319AAD35000C27E9E /* CCSGUIReader.cpp in Sources */,
 				B6DD2FBD1B04825B00E47F5F /* DetourCommon.cpp in Sources */,
@@ -12104,6 +12278,7 @@
 				5020A21F1D49912500E80C72 /* TransformConstraint.c in Sources */,
 				15AE19A219AAD39600C27E9E /* TextBMFontReader.cpp in Sources */,
 				382384281A2590F9002C4610 /* NodeReader.cpp in Sources */,
+				048005BB22B0F29400D19EC0 /* register.c in Sources */,
 				5020A19E1D49912500E80C72 /* EventData.c in Sources */,
 				50ABC01D1926664800A911A9 /* CCThread.cpp in Sources */,
 				15AE180C19AAD2F700C27E9E /* CCAnimate3D.cpp in Sources */,
@@ -12150,6 +12325,7 @@
 				15AE190B19AAD35000C27E9E /* CCDisplayFactory.cpp in Sources */,
 				1A9DCA27180E6955007A3AD4 /* CCGLBufferedNode.cpp in Sources */,
 				B665E2661AA80A6500DDB1C5 /* CCPUDoExpireEventHandlerTranslator.cpp in Sources */,
+				048005BE22B0F29400D19EC0 /* stringpool.c in Sources */,
 				50ABBD541925AB0000A911A9 /* TransformUtils.cpp in Sources */,
 				DABC9FA919E7DFA900FA252C /* CCClippingRectangleNode.cpp in Sources */,
 				3E2F27A619CFBFE100E7C490 /* AudioEngine.cpp in Sources */,
@@ -12289,6 +12465,7 @@
 				507B39CD1C31BDD30067B53E /* CCNodeLoaderLibrary.cpp in Sources */,
 				507B39CE1C31BDD30067B53E /* CCActionFrame.cpp in Sources */,
 				507B39D01C31BDD30067B53E /* CCSet.cpp in Sources */,
+				048005EA22B0F29E00D19EC0 /* rmessage.c in Sources */,
 				507B39D11C31BDD30067B53E /* CCString.cpp in Sources */,
 				507B39D21C31BDD30067B53E /* sweep.cc in Sources */,
 				502AF97A1D0711CA006AF256 /* CCVRGenericHeadTracker.cpp in Sources */,
@@ -12316,8 +12493,10 @@
 				507B39F01C31BDD30067B53E /* CCVertexIndexData.cpp in Sources */,
 				507B39F11C31BDD30067B53E /* CCEventFocus.cpp in Sources */,
 				507B39F21C31BDD30067B53E /* CCSkeleton3D.cpp in Sources */,
+				048005F622B0F29E00D19EC0 /* context.c in Sources */,
 				507B39F31C31BDD30067B53E /* DetourTileCacheBuilder.cpp in Sources */,
 				507B39F41C31BDD30067B53E /* CCApplication-ios.mm in Sources */,
+				048005ED22B0F29E00D19EC0 /* decode.c in Sources */,
 				507B39F81C31BDD30067B53E /* CCMenuItemImageLoader.cpp in Sources */,
 				507B39F91C31BDD30067B53E /* fastlz.c in Sources */,
 				507B39FA1C31BDD30067B53E /* CCSAXParser.cpp in Sources */,
@@ -12342,6 +12521,7 @@
 				507B3A141C31BDD30067B53E /* TriggerMng.cpp in Sources */,
 				5020A2181D49912500E80C72 /* spine-cocos2dx.cpp in Sources */,
 				507B3A181C31BDD30067B53E /* CocosDenshion.m in Sources */,
+				048005EE22B0F29E00D19EC0 /* stringpool.c in Sources */,
 				507B3A191C31BDD30067B53E /* CCPUBaseCollider.cpp in Sources */,
 				507B3A1A1C31BDD30067B53E /* RecastDebugDraw.cpp in Sources */,
 				507B3A1B1C31BDD30067B53E /* CCPhysicsContact.cpp in Sources */,
@@ -12450,9 +12630,11 @@
 				507B3AAA1C31BDD30067B53E /* CCDirector.cpp in Sources */,
 				507B3AAB1C31BDD30067B53E /* CCTableView.cpp in Sources */,
 				507B3AAD1C31BDD30067B53E /* CCPUPositionEmitter.cpp in Sources */,
+				048005F222B0F29E00D19EC0 /* varint.c in Sources */,
 				507B3AAE1C31BDD30067B53E /* CCActionInterval.cpp in Sources */,
 				507B3AAF1C31BDD30067B53E /* CCControlSaturationBrightnessPicker.cpp in Sources */,
 				5020A1EE1D49912500E80C72 /* SkeletonBounds.c in Sources */,
+				048005E822B0F29E00D19EC0 /* array.c in Sources */,
 				507B3AB11C31BDD30067B53E /* CCPUInterParticleColliderTranslator.cpp in Sources */,
 				507B3AB21C31BDD30067B53E /* CCPUOnEmissionObserver.cpp in Sources */,
 				507B3AB31C31BDD30067B53E /* CCActionManager.cpp in Sources */,
@@ -12678,6 +12860,7 @@
 				507B3BCB1C31BDD30067B53E /* CCVertexAttribBinding.cpp in Sources */,
 				507B3BCC1C31BDD30067B53E /* advancing_front.cc in Sources */,
 				507B3BCD1C31BDD30067B53E /* UIScale9Sprite.cpp in Sources */,
+				048005FB22B0F29E00D19EC0 /* bootstrap.c in Sources */,
 				507B3BCE1C31BDD30067B53E /* PageViewReader.cpp in Sources */,
 				507B3BCF1C31BDD30067B53E /* CCParticle3DEmitter.cpp in Sources */,
 				507B3BD01C31BDD30067B53E /* CCAnimationCache.cpp in Sources */,
@@ -12704,6 +12887,7 @@
 				507B3BE71C31BDD30067B53E /* CCPUDoFreezeEventHandlerTranslator.cpp in Sources */,
 				507B3BE91C31BDD30067B53E /* CCSpriteLoader.cpp in Sources */,
 				507B3BEA1C31BDD30067B53E /* s3tc.cpp in Sources */,
+				048005F122B0F29E00D19EC0 /* alloc.c in Sources */,
 				507B3BEB1C31BDD30067B53E /* UIRichText.cpp in Sources */,
 				507B3BED1C31BDD30067B53E /* CCSkin.cpp in Sources */,
 				507B3BEE1C31BDD30067B53E /* CCPUJetAffectorTranslator.cpp in Sources */,
@@ -12756,6 +12940,7 @@
 				507B3C281C31BDD30067B53E /* CCPUForceField.cpp in Sources */,
 				5020A17C1D49912500E80C72 /* AttachmentVertices.cpp in Sources */,
 				507B3C291C31BDD30067B53E /* unzip.cpp in Sources */,
+				048005F522B0F29E00D19EC0 /* proto.c in Sources */,
 				507B3C2A1C31BDD30067B53E /* CCControlLoader.cpp in Sources */,
 				507B3C2B1C31BDD30067B53E /* TextFieldReader.cpp in Sources */,
 				507B3C2C1C31BDD30067B53E /* CCPUEmitterTranslator.cpp in Sources */,
@@ -12771,6 +12956,7 @@
 				507B3C371C31BDD30067B53E /* CCEventListener.cpp in Sources */,
 				507B3C381C31BDD30067B53E /* CCRenderState.cpp in Sources */,
 				507B3C391C31BDD30067B53E /* AssetsManager.cpp in Sources */,
+				048005FA22B0F29E00D19EC0 /* pattern.c in Sources */,
 				507B3C3B1C31BDD30067B53E /* CCTouch.cpp in Sources */,
 				507B3C3E1C31BDD30067B53E /* CCPUParticleSystem3DTranslator.cpp in Sources */,
 				507B3C401C31BDD30067B53E /* CCES2Renderer-ios.m in Sources */,
@@ -12786,6 +12972,7 @@
 				507B3C4F1C31BDD30067B53E /* CCUserDefault.cpp in Sources */,
 				507B3C511C31BDD30067B53E /* CCEventDispatcher.cpp in Sources */,
 				507B3C521C31BDD30067B53E /* CCTextureCube.cpp in Sources */,
+				048005EB22B0F29E00D19EC0 /* register.c in Sources */,
 				507B3C551C31BDD30067B53E /* HttpAsynConnection-apple.m in Sources */,
 				507B3C561C31BDD30067B53E /* RecastDump.cpp in Sources */,
 				507B3C571C31BDD30067B53E /* CCPUCircleEmitter.cpp in Sources */,
@@ -12810,6 +12997,7 @@
 				507B3C711C31BDD30067B53E /* CCPUBeamRender.cpp in Sources */,
 				507B3C721C31BDD30067B53E /* CCRenderCommand.cpp in Sources */,
 				507B3C731C31BDD30067B53E /* CCPUAffectorTranslator.cpp in Sources */,
+				048005F822B0F29E00D19EC0 /* wmessage.c in Sources */,
 				507B3C741C31BDD30067B53E /* CCPUPlaneColliderTranslator.cpp in Sources */,
 				507B3C761C31BDD30067B53E /* UIPageViewIndicator.cpp in Sources */,
 				503D4F651CE29D4E0054A2D1 /* CCVRDistortionMesh.cpp in Sources */,
@@ -12912,6 +13100,7 @@
 				5020A1C41D49912500E80C72 /* PathAttachment.c in Sources */,
 				507B3CE61C31BDD30067B53E /* CCPUScaleVelocityAffector.cpp in Sources */,
 				507B3CE81C31BDD30067B53E /* TGAlib.cpp in Sources */,
+				048005F422B0F29E00D19EC0 /* map.c in Sources */,
 				507B3CE91C31BDD30067B53E /* CCDownloader.cpp in Sources */,
 				507B3CEA1C31BDD30067B53E /* Light3DReader.cpp in Sources */,
 				507B3CEB1C31BDD30067B53E /* CCArray.cpp in Sources */,
@@ -12959,6 +13148,7 @@
 				15FB20981AE7C57D00C31518 /* sweep.cc in Sources */,
 				502AF9791D0711C9006AF256 /* CCVRGenericHeadTracker.cpp in Sources */,
 				15AE199219AAD37300C27E9E /* ImageViewReader.cpp in Sources */,
+				048005D222B0F29D00D19EC0 /* rmessage.c in Sources */,
 				B665E1F71AA80A6500DDB1C5 /* CCPUAffectorManager.cpp in Sources */,
 				2986667F18B1B246000E39CA /* CCTweenFunction.cpp in Sources */,
 				46A171051807CECB005B8026 /* CCPhysicsWorld.cpp in Sources */,
@@ -12986,8 +13176,10 @@
 				503DD8E11926736A00CD74DD /* CCApplication-ios.mm in Sources */,
 				15AE18C719AAD33D00C27E9E /* CCMenuItemImageLoader.cpp in Sources */,
 				B6DD2FF61B04825B00E47F5F /* fastlz.c in Sources */,
+				048005DE22B0F29D00D19EC0 /* context.c in Sources */,
 				50ABC01A1926664800A911A9 /* CCSAXParser.cpp in Sources */,
 				B2CC507C19776DD10041958E /* CCPhysicsJoint.cpp in Sources */,
+				048005D522B0F29D00D19EC0 /* decode.c in Sources */,
 				182C5CE61A9D725400C30D34 /* UserCameraReader.cpp in Sources */,
 				38B8E2E219E671D2002D7CE7 /* UILayoutComponent.cpp in Sources */,
 				B2165EEA19921124000BE3E6 /* CCPrimitiveCommand.cpp in Sources */,
@@ -13012,6 +13204,7 @@
 				B665E2071AA80A6500DDB1C5 /* CCPUBaseCollider.cpp in Sources */,
 				B6DD2FB01B04825B00E47F5F /* RecastDebugDraw.cpp in Sources */,
 				46A170FE1807CECB005B8026 /* CCPhysicsContact.cpp in Sources */,
+				048005D622B0F29D00D19EC0 /* stringpool.c in Sources */,
 				1A570062180BC5A10088DEC7 /* CCAction.cpp in Sources */,
 				1A570066180BC5A10088DEC7 /* CCActionCamera.cpp in Sources */,
 				B665E2D71AA80A6500DDB1C5 /* CCPUJetAffector.cpp in Sources */,
@@ -13120,9 +13313,11 @@
 				15AE1C0319AAE01E00C27E9E /* CCTableView.cpp in Sources */,
 				B665E39F1AA80A6500DDB1C5 /* CCPUPositionEmitter.cpp in Sources */,
 				1A57007E180BC5A10088DEC7 /* CCActionInterval.cpp in Sources */,
+				048005DA22B0F29D00D19EC0 /* varint.c in Sources */,
 				15AE1BF319AAE01E00C27E9E /* CCControlSaturationBrightnessPicker.cpp in Sources */,
 				5020A17B1D49912500E80C72 /* AttachmentVertices.cpp in Sources */,
 				B665E2D31AA80A6500DDB1C5 /* CCPUInterParticleColliderTranslator.cpp in Sources */,
+				048005D022B0F29D00D19EC0 /* array.c in Sources */,
 				B665E3331AA80A6500DDB1C5 /* CCPUOnEmissionObserver.cpp in Sources */,
 				1A570082180BC5A10088DEC7 /* CCActionManager.cpp in Sources */,
 				A0534A681B872FFD006B03E5 /* CCDownloader-apple.mm in Sources */,
@@ -13348,6 +13543,7 @@
 				15FB20901AE7C57D00C31518 /* advancing_front.cc in Sources */,
 				15AE1B8C19AADA9A00C27E9E /* UIScale9Sprite.cpp in Sources */,
 				15AE19AE19AAD39700C27E9E /* PageViewReader.cpp in Sources */,
+				048005E322B0F29D00D19EC0 /* bootstrap.c in Sources */,
 				B68778FD1A8CA82E00643ABF /* CCParticle3DEmitter.cpp in Sources */,
 				1A570297180BCCAB0088DEC7 /* CCAnimationCache.cpp in Sources */,
 				B665E4031AA80A6600DDB1C5 /* CCPUSphereColliderTranslator.cpp in Sources */,
@@ -13374,6 +13570,7 @@
 				B665E26F1AA80A6500DDB1C5 /* CCPUDoFreezeEventHandlerTranslator.cpp in Sources */,
 				15AE18D919AAD33D00C27E9E /* CCSpriteLoader.cpp in Sources */,
 				50ABBECC1925AB6F00A911A9 /* s3tc.cpp in Sources */,
+				048005D922B0F29D00D19EC0 /* alloc.c in Sources */,
 				15AE1B7819AADA9A00C27E9E /* UIRichText.cpp in Sources */,
 				15AE195D19AAD35100C27E9E /* CCSkin.cpp in Sources */,
 				B665E2DB1AA80A6500DDB1C5 /* CCPUJetAffectorTranslator.cpp in Sources */,
@@ -13426,6 +13623,7 @@
 				B665E3071AA80A6500DDB1C5 /* CCPUMeshSurfaceEmitterTranslator.cpp in Sources */,
 				B665E2B31AA80A6500DDB1C5 /* CCPUForceField.cpp in Sources */,
 				1A570359180BD0B00088DEC7 /* unzip.cpp in Sources */,
+				048005DD22B0F29D00D19EC0 /* proto.c in Sources */,
 				15AE18BB19AAD33D00C27E9E /* CCControlLoader.cpp in Sources */,
 				15AE19B819AAD39700C27E9E /* TextFieldReader.cpp in Sources */,
 				B665E29B1AA80A6500DDB1C5 /* CCPUEmitterTranslator.cpp in Sources */,
@@ -13441,6 +13639,7 @@
 				50ABBE5E1925AB6F00A911A9 /* CCEventListener.cpp in Sources */,
 				5012168F1AC47380009A4BEA /* CCRenderState.cpp in Sources */,
 				15AE1BC719AAE00000C27E9E /* AssetsManager.cpp in Sources */,
+				048005E222B0F29D00D19EC0 /* pattern.c in Sources */,
 				50ABBEA81925AB6F00A911A9 /* CCTouch.cpp in Sources */,
 				B665E37F1AA80A6500DDB1C5 /* CCPUParticleSystem3DTranslator.cpp in Sources */,
 				503DD8E91926736A00CD74DD /* CCES2Renderer-ios.m in Sources */,
@@ -13456,6 +13655,7 @@
 				50ABBDB21925AB4100A911A9 /* ccShaders.cpp in Sources */,
 				50ABBD451925AB0000A911A9 /* CCVertex.cpp in Sources */,
 				50ABBEB01925AB6F00A911A9 /* CCUserDefault.cpp in Sources */,
+				048005D322B0F29D00D19EC0 /* register.c in Sources */,
 				50ABBE521925AB6F00A911A9 /* CCEventDispatcher.cpp in Sources */,
 				A045F6D71BA81577005076C7 /* CCTextureCube.cpp in Sources */,
 				52B47A2F1A5349A3004E4C60 /* HttpAsynConnection-apple.m in Sources */,
@@ -13480,6 +13680,7 @@
 				15AE1C1519AAE2C700C27E9E /* CCPhysicsDebugNode.cpp in Sources */,
 				50ABBD841925AB4100A911A9 /* CCBatchCommand.cpp in Sources */,
 				B665E2171AA80A6500DDB1C5 /* CCPUBeamRender.cpp in Sources */,
+				048005E022B0F29D00D19EC0 /* wmessage.c in Sources */,
 				50ABBDA81925AB4100A911A9 /* CCRenderCommand.cpp in Sources */,
 				B665E1FB1AA80A6500DDB1C5 /* CCPUAffectorTranslator.cpp in Sources */,
 				B665E3931AA80A6500DDB1C5 /* CCPUPlaneColliderTranslator.cpp in Sources */,
@@ -13582,6 +13783,7 @@
 				B677B0DA1B18492D006762CB /* CCNavMeshUtils.cpp in Sources */,
 				B665E3C71AA80A6600DDB1C5 /* CCPUScaleVelocityAffector.cpp in Sources */,
 				5020A20B1D49912500E80C72 /* Slot.c in Sources */,
+				048005DC22B0F29D00D19EC0 /* map.c in Sources */,
 				50ABBED01925AB6F00A911A9 /* TGAlib.cpp in Sources */,
 				50693C5F1B6BF2AE005C5820 /* CCDownloader.cpp in Sources */,
 				0C261F291BE7528900707478 /* Light3DReader.cpp in Sources */,
