@@ -35,6 +35,9 @@ set(lua_bindings_manual_headers
     manual/ui/lua_cocos2dx_ui_manual.hpp
     manual/ui/lua_cocos2dx_experimental_video_manual.hpp
     manual/controller/lua_cocos2dx_controller_manual.hpp
+    manual/pbc/lpack.h
+    manual/pbc/pbc-lua.h
+    manual/pbc/lua_cocos2dx_pbc_manual.h
     )
 
 set(lua_bindings_manual_files
@@ -77,6 +80,9 @@ set(lua_bindings_manual_files
     manual/physics3d/lua_cocos2dx_physics3d_manual.cpp
     manual/navmesh/lua_cocos2dx_navmesh_conversions.cpp
     manual/navmesh/lua_cocos2dx_navmesh_manual.cpp
+    manual/pbc/lpack.c
+    manual/pbc/pbc-lua.c
+    manual/pbc/lua_cocos2dx_pbc_manual.cpp
     )
 
 set(lua_bindings_auto_headers

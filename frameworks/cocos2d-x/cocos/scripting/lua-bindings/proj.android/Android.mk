@@ -138,6 +138,11 @@ LOCAL_SRC_FILES += ../manual/navmesh/lua_cocos2dx_navmesh_conversions.cpp \
                    ../manual/navmesh/lua_cocos2dx_navmesh_manual.cpp \
                    ../auto/lua_cocos2dx_navmesh_auto.cpp \
 
+#pbc
+LOCAL_SRC_FILES += ../manual/pbc/lpack.c \
+                   ../manual/pbc/pbc-lua.c \
+                   ../manual/pbc/lua_cocos2dx_pbc_manual.cpp \
+
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../../../external/lua/tolua \
                     $(LUA_INCLUDE_PATH) \
                     $(LOCAL_PATH)/../../../2d \
@@ -164,6 +169,7 @@ LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../../../external/lua/tolua \
                     $(LOCAL_PATH)/../manual/spine \
                     $(LOCAL_PATH)/../manual/ui \
                     $(LOCAL_PATH)/../manual/navmesh \
+                    $(LOCAL_PATH)/../manual/pbc \
                     $(LOCAL_PATH)/../../../../external/xxtea \
                     $(LOCAL_PATH)/../../../.. \
                     $(LOCAL_PATH)/../../../../external/lua
@@ -183,6 +189,7 @@ LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)/../../../../external/lua/tolua \
                            $(LOCAL_PATH)/../manual/extension \
                            $(LOCAL_PATH)/../manual/ui \
                            $(LOCAL_PATH)/../manual/navmesh \
+                           $(LOCAL_PATH)/../manual/pbc \
                            $(LOCAL_PATH)/../../../..
 
 LOCAL_WHOLE_STATIC_LIBRARIES := cclua_android

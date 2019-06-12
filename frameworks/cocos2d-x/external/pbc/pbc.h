@@ -1,7 +1,19 @@
 #ifndef PROTOBUF_C_H
 #define PROTOBUF_C_H
 
-#include "platform/CCPlatformMacros.h"
+#if defined(_MSC_VER)
+#   if defined(CC_STATIC)
+#       define CC_DLL
+#   else
+#       if defined(_USRDLL)
+#           define CC_DLL   __declspec(dllexport)
+#       else         /* use a DLL library */
+#           define CC_DLL   __declspec(dllimport)
+#       endif  
+#   endif
+#else
+#   define CC_DLL
+#endif
 
 #include <stdio.h>
 #include <stdint.h>

@@ -66,8 +66,8 @@ end
 
 function MainScene:testSocket()
     self.client = client.new()
-    self.client:connect("127.0.0.1", 8787)
-    --self.client:connect("149.28.65.61", 8787)
+    --self.client:connect("127.0.0.1", 8787)
+    self.client:connect("149.28.65.61", 8787)
     self.client:setListener(self)
     --[[sock = LuaSock.new()
     sock:connect()

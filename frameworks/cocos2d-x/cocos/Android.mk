@@ -231,7 +231,20 @@ navmesh/CCNavMeshUtils.cpp \
 ../external/poly2tri/sweep/cdt.cc \
 ../external/poly2tri/sweep/sweep_context.cc \
 ../external/poly2tri/sweep/sweep.cc \
-../external/clipper/clipper.cpp
+../external/clipper/clipper.cpp \
+../external/pbc/alloc.c \
+../external/pbc/array.c \
+../external/pbc/bootstrap.c \
+../external/pbc/context.c \
+../external/pbc/decode.c \
+../external/pbc/map.c \
+../external/pbc/pattern.c \
+../external/pbc/proto.c \
+../external/pbc/register.c \
+../external/pbc/rmessage.c \
+../external/pbc/stringpool.c \
+../external/pbc/varint.c \
+../external/pbc/wmessage.c
 
 
 LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH) \
@@ -248,7 +261,8 @@ LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH) \
                     $(LOCAL_PATH)/../external/poly2tri/common \
                     $(LOCAL_PATH)/../external/poly2tri/sweep \
                     $(LOCAL_PATH)/../external/clipper \
-                    $(LOCAL_PATH)/../external/uv/include
+                    $(LOCAL_PATH)/../external/uv/include \
+                    $(LOCAL_PATH)/../external/pbc
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH) \
                     $(LOCAL_PATH)/../external \
@@ -264,7 +278,8 @@ LOCAL_C_INCLUDES := $(LOCAL_PATH) \
                     $(LOCAL_PATH)/../external/poly2tri/common \
                     $(LOCAL_PATH)/../external/poly2tri/sweep \
                     $(LOCAL_PATH)/../external/clipper \
-                    $(LOCAL_PATH)/../external/uv/include
+                    $(LOCAL_PATH)/../external/uv/include \
+                    $(LOCAL_PATH)/../external/pbc
 
 LOCAL_EXPORT_LDLIBS := -lGLESv2 \
                        -llog \

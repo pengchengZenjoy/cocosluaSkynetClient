@@ -22,6 +22,7 @@ add_subdirectory(edtaa3func)
 add_subdirectory(ConvertUTF)
 add_subdirectory(poly2tri)
 add_subdirectory(md5)
+add_subdirectory(pbc)
 
 target_link_libraries(external
     ext_box2d
@@ -44,6 +45,7 @@ target_link_libraries(external
     ext_convertUTF
     ext_poly2tri
     ext_md5
+    ext_pbc
 )
 
 # use lua/js specific libs by property to prevent conflict
