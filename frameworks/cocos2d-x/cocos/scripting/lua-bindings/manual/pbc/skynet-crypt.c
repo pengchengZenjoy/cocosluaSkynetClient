@@ -995,7 +995,7 @@ luaopen_skynet_crypt(lua_State *L) {
 		{ NULL, NULL },
 	};
 	//luaL_newlib(L,l);
-    luaL_register(L, "skynet", l);
+    luaL_register(L, "skynetCrypt", l);
 	return 1;
 }
     

@@ -1,7 +1,14 @@
 
-local MainScene = class("MainScene", cc.load("mvc").ViewBase)
+local MainScene = class("MainScene", cc.Node)
 local LuaSock = require("app.views.LuaSock")
 local client = require("network.client")
+
+function MainScene:ctor(secret)
+    print("pc77 MainScene secret11 = "..tostring(secret))
+    self.secret = secret
+    -- MainScene.super.ctor(self)
+    self:onCreate()
+end
 
 function MainScene:onCreate()
     -- add background image
@@ -9,7 +16,8 @@ function MainScene:onCreate()
         :move(display.center)
         :addTo(self)]]
 
-    local randomKey = skynet.randomkey()
+    local randomKey = skynetCrypt.randomkey()
+    
     print("pc77 randomKey = "..tostring(randomKey))
     print(_VERSION)
 
