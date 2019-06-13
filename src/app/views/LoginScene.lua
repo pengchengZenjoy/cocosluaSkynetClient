@@ -1,6 +1,7 @@
 local LoginScene = class("LoginScene", cc.load("mvc").ViewBase)
 local loginSocket = require("network.loginSocket")
 local MainScene = require("app.views.MainScene")
+local TestScene = require("app.views.TestScene")
 local crypt = skynetCrypt
 
 local function encode_token(token)
@@ -47,7 +48,9 @@ function LoginScene:onMessage(msg)
 		print(result)
 		local code = tonumber(string.sub(result, 1, 3))
 		assert(code == 200)
-		local mainScene = MainScene.new(self.secret)
+		local subid = crypt.base64decode(string.sub(result, 5))
+		print("subid=",subid)
+		local mainScene = TestScene.new(self.secret, subid)
 		local scene = cc.Scene:create()
 		scene:addChild(mainScene)
 		cc.Director:getInstance():replaceScene(scene)

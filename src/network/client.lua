@@ -49,7 +49,11 @@ end
 function M:connect(ip, port)
     self.ip = ip
     self.port = port
-    local sock
+	self:_createSock()
+end
+
+function M:_createSock()
+	local sock
     local isipv6_only = false
     local addrinfo, err = Socket.dns.getaddrinfo(self.ip)
     for i,v in ipairs(addrinfo) do
@@ -66,19 +70,35 @@ function M:connect(ip, port)
    		print("connect tcp")
    	end
    	sock:settimeout(0)
-	local n,e = sock:connect(ip, port)
+	local n,e = sock:connect(self.ip, self.port)
 	print("connect e=", e)
 	self.sock = sock
 end
 
+function M:reConnect()
+	self.isConnectSuccess = false
+	self:_createSock()
+end
+
+function M:keepConnect()
+	--local n,e = self.sock:connect(self.ip, self.port)
+	--print("keepConnect e=", e)
+end
+
 function M:send(msg)
-   local packet = Packer.pack(msg)
-   self.sock:send(packet)
+    local packet = Packer.pack(msg)
+    self.sock:send(packet)
+end
+
+function M:sendNoPack(msg)
+    self.sock:send(msg)
 end
 
 function M:deal_msgs()
 	if not self.isConnectSuccess then
-		self:connect_is_success()
+		if not self:connect_is_success() then
+			self:keepConnect()
+		end
 		return
 	end
 	self:recv()
@@ -160,7 +180,10 @@ function M:dispatch_one()
 		return
 	end
 	local data = table.remove(self.pack_list, 1)
-	print("split pack",#data)
+	if self.listener then
+		self.listener:onMessage(data)
+	end
+	--[[print("split pack",#data)
 	local msgId, msgObj = Packer.unpack(data)
 	local callback = self.callback_tbl[msgId]
 	if callback then
@@ -168,7 +191,7 @@ function M:dispatch_one()
 	end
 	if self.listener then
 		self.listener:onMessage(msgObj)
-	end
+	end]]
 	return
 end
 
@@ -185,11 +208,11 @@ function M:setListener(value)
 end
 
 function M:close()
-
+	self.sock:close()
 end
 
 function M:on_close()
-
+	self:close()
 end
 
 return M
