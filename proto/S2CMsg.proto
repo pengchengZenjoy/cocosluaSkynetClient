@@ -1,0 +1,16 @@
+syntax = "proto2";
+package s2c;
+
+message S2CMsg {
+  enum msgType {
+  	CHAT = 0;
+    CHATLIST = 1;
+    CONNECTINFO = 2;
+  }
+  required msgType msgId = 1;
+  message ChatInfoPb {
+    required string chatContent = 1;
+  }
+  repeated ChatInfoPb chatList = 2;
+  optional string connectContent = 3;
+}

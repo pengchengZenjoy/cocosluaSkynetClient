@@ -180,10 +180,7 @@ function M:dispatch_one()
 		return
 	end
 	local data = table.remove(self.pack_list, 1)
-	if self.listener then
-		self.listener:onMessage(data)
-	end
-	--[[print("split pack",#data)
+	print("split pack",#data)
 	local msgId, msgObj = Packer.unpack(data)
 	local callback = self.callback_tbl[msgId]
 	if callback then
@@ -191,7 +188,7 @@ function M:dispatch_one()
 	end
 	if self.listener then
 		self.listener:onMessage(msgObj)
-	end]]
+	end
 	return
 end
 

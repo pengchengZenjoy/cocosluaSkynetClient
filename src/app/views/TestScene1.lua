@@ -89,7 +89,7 @@ function TestScene:onConnectSuccess()
 end
 
 function TestScene:onMessage(msg)
-	--[[print("TestScene onMessage msg=",tostring(msg))
+	print("TestScene onMessage msg=",tostring(msg))
 	if self.testStatus == 0 then
     	print("===>",self:send_request("echo",0))
     	print("disconnect")
@@ -106,24 +106,7 @@ function TestScene:onMessage(msg)
 		print("self.testStatus="..tostring(self.testStatus))
 		print("self.testStatus=",self:recv_response(msg))
     end
-    self.testStatus = self.testStatus + 1]]
-    print("TestScene onMessage msg.msgId=",tostring(msg.msgId))
-    if msg.msgId == "CONNECTINFO" then
-        print("TestScene onMessage connectContent=",tostring(msg.connectContent))
-        local sendMsg = {
-            msgId = "CHAT",
-            chatInfo = {
-                chatContent = "client test"
-            }
-        }
-        self.client:send(sendMsg)
-    elseif msg.msgId == "CHAT" then
-        local chatList = msg.chatList
-        for i=1,#chatList do
-            print("recv index=", i)
-            print("recv chatContent=", chatList[i].chatContent)
-        end
-    end
+    self.testStatus = self.testStatus + 1
 end
 
 function TestScene:send_request(v, session)

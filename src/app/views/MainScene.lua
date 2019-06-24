@@ -1,11 +1,18 @@
-
 local MainScene = class("MainScene", cc.Node)
 local LuaSock = require("app.views.LuaSock")
 local client = require("network.client")
+local crypt = skynetCrypt
 
-function MainScene:ctor(secret)
+local token = {
+    server = "sample",
+    user = "hello",
+    pass = "password",
+}
+
+function MainScene:ctor(secret,subid)
     print("pc77 MainScene secret11 = "..tostring(secret))
     self.secret = secret
+    self.subid = subid
     -- MainScene.super.ctor(self)
     self:onCreate()
 end
@@ -67,16 +74,20 @@ end
 
 function MainScene:onConnectSuccess()
     print("pc11 onConnectSuccess")
-    local msg = {
-        msgId = "GETCHATLIST",
-    }
-    self.client:send(msg)
+    self.index = 1
+    local handshake = string.format("%s@%s#%s:%d", crypt.base64encode(token.user), crypt.base64encode(token.server),crypt.base64encode(self.subid) , self.index)
+    local hmac = crypt.hmac64(crypt.hashkey(handshake), self.secret)
+    local msg = handshake .. ":" .. crypt.base64encode(hmac)
+
+    local size = #msg
+    local package = string.pack(">HA", size, msg);
+    self.client:sendNoPack(package)
 end
 
 function MainScene:testSocket()
     self.client = client.new()
-    --self.client:connect("127.0.0.1", 8787)
-    self.client:connect("149.28.65.61", 8787)
+    self.client:connect("127.0.0.1", 8888)
+    --self.client:connect("149.28.65.61", 8787)
     self.client:setListener(self)
     --[[sock = LuaSock.new()
     sock:connect()
@@ -85,7 +96,13 @@ end
 
 function MainScene:onMessage(msgObj)
     local msgId = msgObj.msgId
-    if msgId == "CHATLIST" then
+    print("MainScene onMessage msgId=",tostring(msgId))
+    if msgId == "CONNECTINFO" then
+        local msg = {
+            msgId = "GETCHATLIST",
+        }
+        self.client:send(msg)
+    elseif msgId == "CHATLIST" then
         self.curChatList = msgObj.chatList
         self:updateScrollView()
     elseif msgId == "CHAT" then
