@@ -1,5 +1,6 @@
 local Socket = require "socket"
 local Packer = require "network.packer"
+local crypt = skynetCrypt
 
 local M = {}
 
@@ -37,9 +38,7 @@ function M:connect_is_success( ... )
     _,ready_forwrite,errorStr = socket.select(nil,for_write,1);
     if #ready_forwrite > 0 then
     	self.isConnectSuccess = true
-    	if self.listener then
-			self.listener:onConnectSuccess()
-		end
+    	self:shakeHand()
         return true;
     end
     
@@ -50,6 +49,23 @@ function M:connect(ip, port)
     self.ip = ip
     self.port = port
 	self:_createSock()
+end
+
+function M:setLoginInfo(secret, subid)
+	self.secret = secret
+    self.subid = subid
+end
+
+function M:shakeHand()
+	self.index = 1
+	local token = zGlobal.token
+    local handshake = string.format("%s@%s#%s:%d", crypt.base64encode(token.user), crypt.base64encode(token.server),crypt.base64encode(self.subid) , self.index)
+    local hmac = crypt.hmac64(crypt.hashkey(handshake), self.secret)
+    local msg = handshake .. ":" .. crypt.base64encode(hmac)
+
+    local size = #msg
+    local package = string.pack(">HA", size, msg);
+    self:sendNoPack(package)
 end
 
 function M:_createSock()
@@ -182,13 +198,20 @@ function M:dispatch_one()
 	local data = table.remove(self.pack_list, 1)
 	print("split pack",#data)
 	local msgId, msgObj = Packer.unpack(data)
-	local callback = self.callback_tbl[msgId]
-	if callback then
-		callback.callback(callback.obj, params)
-	end
-	if self.listener then
-		self.listener:onMessage(msgObj)
-	end
+	if msgId == "CONNECTINFO" then
+		if self.listener then
+    		self.listener:loginSuccess()
+    	end
+    else
+    	local callback = self.callback_tbl[msgId]
+		if callback then
+			callback.callback(callback.obj, params)
+		end
+		if self.listener then
+			self.listener:onMessage(msgObj)
+		end
+    end
+	
 	return
 end
 

@@ -5,12 +5,14 @@ message C2SMsg {
   enum msgType {
     CHAT = 0;
     GETCHATLIST = 1;
+    GETROOMLIST = 2;
+    ENTERROOM = 3;
   }
   required msgType msgId = 1;
 
   message ChatInfoPb {
     required string chatContent = 1;
   }
-
   optional ChatInfoPb chatInfo = 2;
+  optional int32 roomId = 3;
 }

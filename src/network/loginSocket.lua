@@ -24,7 +24,9 @@ function M:connect_is_success( ... )
     table.insert(for_write,self.sock);
     local ready_forwrite;
     _,ready_forwrite,errorStr = socket.select(nil,for_write,1);
+    print("pc88 errorStr="..tostring(errorStr))
     if #ready_forwrite > 0 then
+    	print("pc88 self.isConnectSuccess=")
     	self.isConnectSuccess = true
     	if self.listener then
 			self.listener:onConnectSuccess()
@@ -91,7 +93,7 @@ function M:recv()
 
     print("recv data", #r)
     if self.listener then
-		self.listener:onMessage(r)
+		self.listener:onLoginMessage(r)
 	end
 end
 

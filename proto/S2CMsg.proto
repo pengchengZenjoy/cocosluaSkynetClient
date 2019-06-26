@@ -6,6 +6,8 @@ message S2CMsg {
   	CHAT = 0;
     CHATLIST = 1;
     CONNECTINFO = 2;
+    ROOMLIST = 3;
+    ENTERROOMSUCCESS = 4;
   }
   required msgType msgId = 1;
   message ChatInfoPb {
@@ -13,4 +15,6 @@ message S2CMsg {
   }
   repeated ChatInfoPb chatList = 2;
   optional string connectContent = 3;
+  repeated int32 roomList = 4;
+  optional int32 roomId = 5;
 }

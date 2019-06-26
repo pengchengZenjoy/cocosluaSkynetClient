@@ -2,7 +2,18 @@ local LoginScene = class("LoginScene", cc.load("mvc").ViewBase)
 local loginSocket = require("network.loginSocket")
 local MainScene = require("app.views.MainScene")
 local TestScene = require("app.views.TestScene")
+local FIRScene = require("app.views.FIRScene")
+local RoomListScene = require("app.views.RoomListScene")
 local crypt = skynetCrypt
+local client = require("network.client")
+
+zGlobal.serverIp = "10.7.2.180"
+--zGlobal.serverIp = "127.0.0.1"
+zGlobal.token = {
+    server = "sample",
+    user = "hello",
+    pass = "password",
+}
 
 local function encode_token(token)
 	return string.format("%s@%s:%s",
@@ -15,7 +26,15 @@ function LoginScene:onConnectSuccess()
 
 end
 
-function LoginScene:onMessage(msg)
+function LoginScene:loginSuccess()
+	print(" LoginScene:loginSuccess() ")
+	local mainScene = RoomListScene.new()
+	local scene = cc.Scene:create()
+	scene:addChild(mainScene)
+	cc.Director:getInstance():replaceScene(scene)
+end
+
+function LoginScene:onLoginMessage(msg)
 	local fd = nil
     if self.loginStatus == 0 then
     	self.challenge = crypt.base64decode(msg)
@@ -32,12 +51,7 @@ function LoginScene:onMessage(msg)
     	local hmac = crypt.hmac64(self.challenge, secret)
 		local sendContent = crypt.base64encode(hmac)
 		self.loginSock:send(sendContent .. "\n")
-		local token = {
-			server = "sample",
-			user = "hello",
-			pass = "password",
-		}
-
+		local token = zGlobal.token
 		local etoken = crypt.desencode(secret, encode_token(token))
 		local b = crypt.base64encode(etoken)
 		local sendContent = crypt.base64encode(etoken)
@@ -50,10 +64,12 @@ function LoginScene:onMessage(msg)
 		assert(code == 200)
 		local subid = crypt.base64decode(string.sub(result, 5))
 		print("subid=",subid)
-		local mainScene = MainScene.new(self.secret, subid)
-		local scene = cc.Scene:create()
-		scene:addChild(mainScene)
-		cc.Director:getInstance():replaceScene(scene)
+
+		zGlobal.sockClient = client.new()
+	    zGlobal.sockClient:connect(zGlobal.serverIp, 8888)
+	    zGlobal.sockClient:setLoginInfo(self.secret, subid)
+	    --self.client:connect("149.28.65.61", 8787)
+	    zGlobal.sockClient:setListener(self)
     end
     self.loginStatus = self.loginStatus + 1
 end
@@ -61,14 +77,19 @@ end
 function LoginScene:onCreate()
 	self.loginStatus = 0
 
+	zGlobal.token.user = "user"..math.random(100000)
+
 	local loginSock = loginSocket.new()
     --self.client:connect("127.0.0.1", 8787)
-    loginSock:connect("127.0.0.1", 8001)
+    loginSock:connect(zGlobal.serverIp, 8001)
     loginSock:setListener(self)
     self.loginSock = loginSock
 
     local function update(delta)
         loginSock:deal_msgs()
+        if zGlobal.sockClient then
+        	zGlobal.sockClient:deal_msgs()
+        end
     end
     self:scheduleUpdateWithPriorityLua(update,0)
 
