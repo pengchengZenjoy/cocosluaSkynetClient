@@ -35,6 +35,12 @@ function FIRScene:playChess(nearIndexX, nearIndexY)
         }
         zGlobal.sockClient:send(msg)
         self.canPlayChess = false
+    else
+        if self.gameEnd then
+            zGlobal.showTips("game end")
+        else
+            zGlobal.showTips("please wait")
+        end
     end
 end
 
@@ -44,6 +50,7 @@ function FIRScene:onMessage(msgObj)
     if msgId == "S_G_MOVE" then
         print("S_G_MOVE zGlobal.token.user="..zGlobal.token.user)
         print("S_G_MOVE msgObj.userId="..msgObj.userId)
+        self.gameEnd = false
         self.boardLayer:updateLayer()
         if zGlobal.token.user == msgObj.userId then
             self.canPlayChess = true
@@ -65,6 +72,7 @@ function FIRScene:onMessage(msgObj)
         end
     elseif msgId == "S_PLAYRESULT" then
         self.canPlayChess = false
+        self.gameEnd = true
         if zGlobal.token.user == msgObj.userId then
             zGlobal.showTips("you win")
             self.boardLayer:drawChess(msgObj.chessIndexX, msgObj.chessIndexY, true)

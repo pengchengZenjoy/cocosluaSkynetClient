@@ -6,6 +6,7 @@ function FIRBoardLayer:ctor()
 end
 
 function FIRBoardLayer:updateLayer()
+	print("FIRBoardLayer:updateLayer()")
 	self.drawMap = {}
 	self:removeAllChildren()
 	local horNum = 15
@@ -76,7 +77,7 @@ function FIRBoardLayer:registerTouch()
         	nearIndexY = math.min(self.horNum, nearIndexY)
         	local targetX = nearIndexX*self.lineDis
 			local targetY = nearIndexY*self.lineDis
-			local distance = 30
+			local distance = 35
 			if math.abs(touchPosX-targetX) <= distance and math.abs(touchPosY-targetY) <= distance then
 				if self.listener then
 					self.listener:playChess(nearIndexX, nearIndexY)
