@@ -76,7 +76,7 @@ function FIRBoardLayer:registerTouch()
         	nearIndexY = math.min(self.horNum, nearIndexY)
         	local targetX = nearIndexX*self.lineDis
 			local targetY = nearIndexY*self.lineDis
-			local distance = 20
+			local distance = 30
 			if math.abs(touchPosX-targetX) <= distance and math.abs(touchPosY-targetY) <= distance then
 				if self.listener then
 					self.listener:playChess(nearIndexX, nearIndexY)
