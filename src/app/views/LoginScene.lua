@@ -7,8 +7,10 @@ local RoomListScene = require("app.views.RoomListScene")
 local crypt = skynetCrypt
 local client = require("network.client")
 
-zGlobal.serverIp = "10.7.2.180"
+--zGlobal.serverIp = "10.7.2.180"
 --zGlobal.serverIp = "127.0.0.1"
+zGlobal.serverIp = "149.28.65.61"
+
 zGlobal.token = {
     server = "sample",
     user = "hello",
