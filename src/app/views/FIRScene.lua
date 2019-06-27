@@ -44,6 +44,7 @@ function FIRScene:onMessage(msgObj)
     if msgId == "S_G_MOVE" then
         print("S_G_MOVE zGlobal.token.user="..zGlobal.token.user)
         print("S_G_MOVE msgObj.userId="..msgObj.userId)
+        self.boardLayer:updateLayer()
         if zGlobal.token.user == msgObj.userId then
             self.canPlayChess = true
             zGlobal.showTips("it is you turn")

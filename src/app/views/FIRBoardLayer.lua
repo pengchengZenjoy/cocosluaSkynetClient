@@ -1,13 +1,12 @@
 local FIRBoardLayer = class("FIRBoardLayer", cc.Layer)
 
 function FIRBoardLayer:ctor()
-	self.drawMap = {}
-
 	self:updateLayer()
     self:registerTouch()
 end
 
 function FIRBoardLayer:updateLayer()
+	self.drawMap = {}
 	self:removeAllChildren()
 	local horNum = 15
 	local verNum = 15
