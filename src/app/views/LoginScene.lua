@@ -68,7 +68,7 @@ function LoginScene:onLoginMessage(msg)
 		print("subid=",subid)
 
 		zGlobal.sockClient = client.new()
-	    zGlobal.sockClient:connect(zGlobal.serverIp, 8888)
+	    zGlobal.sockClient:connect(zGlobal.serverIp, 8018)
 	    zGlobal.sockClient:setLoginInfo(self.secret, subid)
 	    --self.client:connect("149.28.65.61", 8787)
 	    zGlobal.sockClient:setListener(self)
