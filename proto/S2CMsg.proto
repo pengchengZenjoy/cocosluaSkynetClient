@@ -8,6 +8,11 @@ message S2CMsg {
     CONNECTINFO = 2;
     ROOMLIST = 3;
     ENTERROOMSUCCESS = 4;
+    ENTERROOMFAIL = 5;
+    S_G_MOVE = 6;
+    S_PLAYCHESS = 7;
+    S_PLAYRESULT = 8;
+    S_EXITROOM = 9;
   }
   required msgType msgId = 1;
   message ChatInfoPb {
@@ -17,4 +22,7 @@ message S2CMsg {
   optional string connectContent = 3;
   repeated int32 roomList = 4;
   optional int32 roomId = 5;
+  optional string userId = 6;
+  optional int32 chessIndexX = 7;
+  optional int32 chessIndexY = 8;
 }

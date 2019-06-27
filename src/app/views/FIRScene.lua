@@ -1,126 +1,114 @@
 local FIRScene = class("FIRScene", cc.Node)
 local LuaSock = require("app.views.LuaSock")
 local client = require("network.client")
-local crypt = skynetCrypt
+local FIRBoardLayer = require("app.views.FIRBoardLayer")
 
-local token = {
-    server = "sample",
-    user = "hello",
-    pass = "password",
-}
-
-function FIRScene:ctor(secret,subid)
-    print("pc77 FIRScene secret11 = "..tostring(secret))
-    self.secret = secret
-    self.subid = subid
-    -- MainScene.super.ctor(self)
+function FIRScene:ctor()
     self:onCreate()
 end
 
 function FIRScene:onCreate()
-    -- add background image
-    --[[display.newSprite("HelloWorld.png")
-        :move(display.center)
-        :addTo(self)]]
-    local randomKey = skynetCrypt.randomkey()
-    
-    print("pc77 randomKey = "..tostring(randomKey))
-    print(_VERSION)
-
-    self:testSocket()
-    self:createScrollView()
+    print("FIRScene:onCreate()")
+    self.canPlayChess = false
     local function update(delta)
-        self.client:deal_msgs()
+        zGlobal.sockClient:deal_msgs()
     end
     self:scheduleUpdateWithPriorityLua(update,0)
+    zGlobal.sockClient:setListener(self)
+    local msg = {
+        msgId = "GAMEREADY",
+    }
+    zGlobal.sockClient:send(msg)
+
+    self.boardLayer = FIRBoardLayer.new()
+    self.boardLayer:setListener(self)
+    self:addChild(self.boardLayer)
+    self:addExitBtn()
 end
 
-function FIRScene:onConnectSuccess()
-    print("pc11 onConnectSuccess")
-    self.index = 1
-    local handshake = string.format("%s@%s#%s:%d", crypt.base64encode(token.user), crypt.base64encode(token.server),crypt.base64encode(self.subid) , self.index)
-    local hmac = crypt.hmac64(crypt.hashkey(handshake), self.secret)
-    local msg = handshake .. ":" .. crypt.base64encode(hmac)
-
-    local size = #msg
-    local package = string.pack(">HA", size, msg);
-    self.client:sendNoPack(package)
-end
-
-function FIRScene:testSocket()
-    self.client = client.new()
-    self.client:connect("127.0.0.1", 8888)
-    --self.client:connect("149.28.65.61", 8787)
-    self.client:setListener(self)
-    --[[sock = LuaSock.new()
-    sock:connect()
-    self.sock = sock]]
+function FIRScene:playChess(nearIndexX, nearIndexY)
+    if self.canPlayChess then
+        local msg = {
+            msgId = "PLAYCHESS",
+            chessIndexX = nearIndexX,
+            chessIndexY = nearIndexY,
+        }
+        zGlobal.sockClient:send(msg)
+        self.canPlayChess = false
+    end
 end
 
 function FIRScene:onMessage(msgObj)
     local msgId = msgObj.msgId
-    print("MainScene onMessage msgId=",tostring(msgId))
-    if msgId == "CONNECTINFO" then
-        local msg = {
-            msgId = "GETROOMLIST",
-        }
-        self.client:send(msg)
-    elseif msgId == "ROOMLIST" then
-        local roomList = msgObj.roomList
-        for i,v in ipairs(roomList) do
-            print("recv index=", i)
-            print("recv roomId=", v)
+    print("FIRScene onMessage msgId=",tostring(msgId))
+    if msgId == "S_G_MOVE" then
+        print("S_G_MOVE zGlobal.token.user="..zGlobal.token.user)
+        print("S_G_MOVE msgObj.userId="..msgObj.userId)
+        if zGlobal.token.user == msgObj.userId then
+            self.canPlayChess = true
+            zGlobal.showTips("it is you turn")
+        else
+            zGlobal.showTips("please wait")
         end
-        self:updateScrollView()
+    elseif msgId == "S_PLAYCHESS" then
+        print("S_PLAYCHESS msgObj.userId="..msgObj.userId)
+        print("S_PLAYCHESS msgObj.chessIndexX="..msgObj.chessIndexX)
+        print("S_PLAYCHESS msgObj.chessIndexY="..msgObj.chessIndexY)
+        if zGlobal.token.user == msgObj.userId then
+            zGlobal.showTips("please wait")
+            self.boardLayer:drawChess(msgObj.chessIndexX, msgObj.chessIndexY, true)
+        else
+            self.canPlayChess = true
+            zGlobal.showTips("it is you turn")
+            self.boardLayer:drawChess(msgObj.chessIndexX, msgObj.chessIndexY, false)
+        end
+    elseif msgId == "S_PLAYRESULT" then
+        self.canPlayChess = false
+        if zGlobal.token.user == msgObj.userId then
+            zGlobal.showTips("you win")
+            self.boardLayer:drawChess(msgObj.chessIndexX, msgObj.chessIndexY, true)
+        else
+            zGlobal.showTips("you lose")
+            self.boardLayer:drawChess(msgObj.chessIndexX, msgObj.chessIndexY, false)
+        end
+    elseif msgId == "S_EXITROOM" then
+        if zGlobal.token.user == msgObj.userId then
+            local RoomListScene = require("app.views.RoomListScene")
+            local roomScene = RoomListScene.new()
+            local scene = cc.Scene:create()
+            scene:addChild(roomScene)
+            cc.Director:getInstance():replaceScene(scene)
+        else
+            zGlobal.showTips("other play exit room")
+            self.boardLayer:updateLayer()
+        end
     end
 end
 
-function FIRScene:createScrollView()
-    local scrollview =ccui.ScrollView:create() 
-    scrollview:setTouchEnabled(true) 
-    scrollview:setBounceEnabled(true)
-    scrollview:setDirection(ccui.ScrollViewDir.vertical)
-    scrollview:setContentSize(cc.size(display.width/2,display.height))
-    scrollview:setPosition(cc.p(0,0))
-    self.scrollview = scrollview
-    self:addChild(scrollview)
-end
+function FIRScene:addExitBtn()
+    local btn = ccui.Button:create("edit_bg_big.png", "edit_bg_big.png", "edit_bg_big.png", 0)
+    btn:setTitleText("退出房间")
+    btn:setTitleColor(cc.c4b(0,0,0, 255))
+    btn:setTitleFontSize(40)
 
-function FIRScene:updateScrollView()
-    local scrollview = self.scrollview
-    scrollview:removeAllChildren()
-    local topHeight = 20
-    local bottomHeight = 20
-    local roomList = self.roomList
-    local roomNum = 10 --#roomList
-    local oneItemHeight = 60
-    local innerHeight = topHeight + oneItemHeight*roomNum + bottomHeight
-    if innerHeight < display.height then
-        innerHeight = display.height
-    end
-    scrollview:setInnerContainerSize(cc.size(display.width/2,innerHeight))
-    for i =1,roomNum do
-        local btn = ccui.Button:create("edit_bg_big.png", "edit_bg_big.png", "edit_bg_big.png", 0)
-        btn:setTitleText("房间"..i)
-        btn:setTitleColor(cc.c4b(0,0,0, 255))
-        btn:setTitleFontSize(40)
-
-        --按钮的回调函数
-        btn:addTouchEventListener(function(sender, eventType)
-            if (0 == eventType)  then
-                print("pressed i="..i)
-            elseif (1 == eventType)  then
-                print("move")
-            elseif  (2== eventType) then
-                print("up")
-            elseif  (3== eventType) then
-                print("cancel")
-            end
-        end)
-        scrollview:addChild(btn)
-        btn:setAnchorPoint(cc.p(0.0, 1))
-        btn:setPosition(100, innerHeight - topHeight - oneItemHeight*(i-1))
-    end
+    --按钮的回调函数
+    btn:addTouchEventListener(function(sender, eventType)
+        if (0 == eventType)  then
+            local msg = {
+                msgId = "EXITROOM",
+            }
+            zGlobal.sockClient:send(msg)
+        elseif (1 == eventType)  then
+            --print("move")
+        elseif  (2== eventType) then
+            --print("up")
+        elseif  (3== eventType) then
+            --print("cancel")
+        end
+    end)
+    self:addChild(btn, 10)
+    btn:setAnchorPoint(cc.p(1, 1))
+    btn:setPosition(display.width - 10, display.height - 10)
 end
 
 return FIRScene

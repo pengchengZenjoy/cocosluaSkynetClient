@@ -7,6 +7,9 @@ message C2SMsg {
     GETCHATLIST = 1;
     GETROOMLIST = 2;
     ENTERROOM = 3;
+    GAMEREADY = 4;
+    PLAYCHESS = 5;
+    EXITROOM = 6;
   }
   required msgType msgId = 1;
 
@@ -15,4 +18,6 @@ message C2SMsg {
   }
   optional ChatInfoPb chatInfo = 2;
   optional int32 roomId = 3;
+  optional int32 chessIndexX = 4;
+  optional int32 chessIndexY = 5;
 }
