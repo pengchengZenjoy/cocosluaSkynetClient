@@ -24,6 +24,7 @@ function FIRScene:onCreate()
     self.boardLayer:setListener(self)
     self:addChild(self.boardLayer)
     self:addExitBtn()
+    self:addTipLabel()
 end
 
 function FIRScene:playChess(nearIndexX, nearIndexY)
@@ -55,19 +56,23 @@ function FIRScene:onMessage(msgObj)
         if zGlobal.token.user == msgObj.userId then
             self.canPlayChess = true
             zGlobal.showTips("it is you turn")
+            self.tipLable:setString("my turn")
         else
             zGlobal.showTips("please wait")
+            self.tipLable:setString("other turn")
         end
     elseif msgId == "S_PLAYCHESS" then
         print("S_PLAYCHESS msgObj.userId="..msgObj.userId)
         print("S_PLAYCHESS msgObj.chessIndexX="..msgObj.chessIndexX)
         print("S_PLAYCHESS msgObj.chessIndexY="..msgObj.chessIndexY)
         if zGlobal.token.user == msgObj.userId then
-            zGlobal.showTips("please wait")
+            zGlobal.showTips("other turn")
+            self.tipLable:setString("other turn")
             self.boardLayer:drawChess(msgObj.chessIndexX, msgObj.chessIndexY, true)
         else
             self.canPlayChess = true
-            zGlobal.showTips("it is you turn")
+            zGlobal.showTips("my turn")
+            self.tipLable:setString("my turn")
             self.boardLayer:drawChess(msgObj.chessIndexX, msgObj.chessIndexY, false)
         end
     elseif msgId == "S_PLAYRESULT" then
@@ -75,9 +80,11 @@ function FIRScene:onMessage(msgObj)
         self.gameEnd = true
         if zGlobal.token.user == msgObj.userId then
             zGlobal.showTips("you win")
+            self.tipLable:setString("you win")
             self.boardLayer:drawChess(msgObj.chessIndexX, msgObj.chessIndexY, true)
         else
             zGlobal.showTips("you lose")
+            self.tipLable:setString("you lose")
             self.boardLayer:drawChess(msgObj.chessIndexX, msgObj.chessIndexY, false)
         end
     elseif msgId == "S_EXITROOM" then
@@ -90,8 +97,19 @@ function FIRScene:onMessage(msgObj)
         else
             zGlobal.showTips("other play exit room")
             self.boardLayer:updateLayer()
+            self.tipLable:setString("wait other")
         end
     end
+end
+
+function FIRScene:addTipLabel()
+    local label = cc.Label:createWithTTF("wait other", "arial.ttf", 50)
+    self.tipLable = label
+    label:setString("wait other")
+    label:setColor(cc.c3b(0,0,0))
+    self:addChild(label, 10)
+    label:setAnchorPoint(cc.p(0, 1))
+    label:setPosition(10, display.height - 10)
 end
 
 function FIRScene:addExitBtn()
@@ -102,7 +120,11 @@ function FIRScene:addExitBtn()
 
     --按钮的回调函数
     btn:addTouchEventListener(function(sender, eventType)
-        if (0 == eventType)  then
+        if (0 == eventType) then
+            if self.isSendExitRoom then
+                return
+            end
+            self.isSendExitRoom = true
             local msg = {
                 msgId = "EXITROOM",
             }
