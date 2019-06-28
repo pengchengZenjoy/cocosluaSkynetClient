@@ -19,6 +19,7 @@ function M:init()
 	self.head = nil
 	self.callback_tbl = {}
 	self:registerProto()
+	self.index = 1
 end
 
 function M:registerProto()
@@ -57,7 +58,6 @@ function M:setLoginInfo(secret, subid)
 end
 
 function M:shakeHand()
-	self.index = 1
 	local token = zGlobal.token
     local handshake = string.format("%s@%s#%s:%d", crypt.base64encode(token.user), crypt.base64encode(token.server),crypt.base64encode(self.subid) , self.index)
     local hmac = crypt.hmac64(crypt.hashkey(handshake), self.secret)
@@ -66,6 +66,7 @@ function M:shakeHand()
     local size = #msg
     local package = string.pack(">HA", size, msg);
     self:sendNoPack(package)
+    self.index = self.index + 1
 end
 
 function M:_createSock()
@@ -92,6 +93,7 @@ function M:_createSock()
 end
 
 function M:reConnect()
+	print("reConnect")
 	self.isConnectSuccess = false
 	self:_createSock()
 end
@@ -103,11 +105,23 @@ end
 
 function M:send(msg)
     local packet = Packer.pack(msg)
-    self.sock:send(packet)
+    local para1,para2,para3 = self.sock:send(packet)
+    print("send para1="..tostring(para1))
+    print("send para2="..tostring(para2))
+    if not para1 then
+    	self.notSuccessMsg = packet
+    	self:reConnect()
+    end
 end
 
 function M:sendNoPack(msg)
-    self.sock:send(msg)
+    local para1,para2,para3 = self.sock:send(msg)
+    print("sendNoPack para1="..tostring(para1))
+    print("sendNoPack para2="..tostring(para2))
+    if not para1 then
+    	self.notSuccessMsg = msg
+    	self:reConnect()
+    end
 end
 
 function M:deal_msgs()
@@ -199,8 +213,12 @@ function M:dispatch_one()
 	print("split pack",#data)
 	local msgId, msgObj = Packer.unpack(data)
 	if msgId == "CONNECTINFO" then
-		if self.listener then
+		if self.listener and self.listener.loginSuccess then
     		self.listener:loginSuccess()
+    	end
+    	if self.notSuccessMsg then
+    		self:sendNoPack(self.notSuccessMsg)
+    		self.notSuccessMsg = nil
     	end
     else
     	local callback = self.callback_tbl[msgId]
