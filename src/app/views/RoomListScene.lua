@@ -107,4 +107,23 @@ function RoomListScene:updateScrollView()
     end
 end
 
+function RoomListScene:testHttp()
+    local xhr = cc.XMLHttpRequest:new()
+    xhr.responseType = cc.XMLHTTPREQUEST_RESPONSE_STRING
+    xhr:open("GET", "http://127.0.0.1:8111/?color=blue&text=abc")
+
+    local function onReadyStateChanged()
+        if xhr.readyState == 4 and (xhr.status >= 200 and xhr.status < 207) then
+            print(xhr.response)
+            print("Http Status Code:" .. xhr.statusText)
+        else
+            print("xhr.readyState is:", xhr.readyState, "xhr.status is: ",xhr.status)
+        end
+        xhr:unregisterScriptHandler()
+    end
+
+    xhr:registerScriptHandler(onReadyStateChanged)
+    xhr:send()
+end
+
 return RoomListScene
