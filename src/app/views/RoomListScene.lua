@@ -3,20 +3,6 @@ local LuaSock = require("app.views.LuaSock")
 local FIRScene = require("app.views.FIRScene")
 local crypt = skynetCrypt
 
-zGlobal.showTips = function(content)
-    local curScene = cc.Director:getInstance():getRunningScene()
-    local label = cc.Label:createWithTTF(content, "arial.ttf", 50)
-    label:setString(content)
-    curScene:addChild(label, 100)
-    label:setAnchorPoint(cc.p(0.5, 0.5))
-    label:setPosition(cc.p(display.width/2, display.height/2))
-    label:setColor(cc.c3b(255,0,0))
-    local function endFuc(node)
-        label:removeFromParent(true)
-    end
-    label:runAction( cc.Sequence:create(cc.MoveBy:create(1.5, cc.p(0,200)) ,cc.CallFunc:create(endFuc)))
-end
-
 function RoomListScene:ctor()
     self:onCreate()
 end

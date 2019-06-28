@@ -20,6 +20,7 @@ function M:init()
 	self.callback_tbl = {}
 	self:registerProto()
 	self.index = 1
+	self.reConnectNum = 0
 end
 
 function M:registerProto()
@@ -58,6 +59,7 @@ function M:setLoginInfo(secret, subid)
 end
 
 function M:shakeHand()
+	print("shakeHand")
 	local token = zGlobal.token
     local handshake = string.format("%s@%s#%s:%d", crypt.base64encode(token.user), crypt.base64encode(token.server),crypt.base64encode(self.subid) , self.index)
     local hmac = crypt.hmac64(crypt.hashkey(handshake), self.secret)
@@ -65,11 +67,11 @@ function M:shakeHand()
 
     local size = #msg
     local package = string.pack(">HA", size, msg);
-    self:sendNoPack(package)
-    self.index = self.index + 1
+    self:sendNoPack(package, true)
 end
 
 function M:_createSock()
+	self.isConnectSuccess = false
 	local sock
     local isipv6_only = false
     local addrinfo, err = Socket.dns.getaddrinfo(self.ip)
@@ -93,9 +95,21 @@ function M:_createSock()
 end
 
 function M:reConnect()
-	print("reConnect")
-	self.isConnectSuccess = false
-	self:_createSock()
+	self.isReconnecting = true
+	local curReConnectNum = self.reConnectNum
+	self.reConnectNum = self.reConnectNum + 1
+	if curReConnectNum == 0 then
+		self:_createSock()
+	elseif curReConnectNum > 5 then
+		self:close()
+		--zGlobal.showTips("server not open")
+		zGlobal.toLoginScene()
+	else
+		callback = function()
+			self:_createSock()
+		end
+		zGlobal.delayCallBack(callback, 1)
+	end
 end
 
 function M:keepConnect()
@@ -114,12 +128,14 @@ function M:send(msg)
     end
 end
 
-function M:sendNoPack(msg)
+function M:sendNoPack(msg, noRecord)
     local para1,para2,para3 = self.sock:send(msg)
     print("sendNoPack para1="..tostring(para1))
     print("sendNoPack para2="..tostring(para2))
     if not para1 then
-    	self.notSuccessMsg = msg
+    	if not noRecord then
+    		self.notSuccessMsg = msg
+    	end
     	self:reConnect()
     end
 end
@@ -213,13 +229,20 @@ function M:dispatch_one()
 	print("split pack",#data)
 	local msgId, msgObj = Packer.unpack(data)
 	if msgId == "CONNECTINFO" then
-		if self.listener and self.listener.loginSuccess then
-    		self.listener:loginSuccess()
-    	end
-    	if self.notSuccessMsg then
-    		self:sendNoPack(self.notSuccessMsg)
-    		self.notSuccessMsg = nil
-    	end
+		if msgObj.connectContent == "200 OK" then
+			self.index = self.index + 1
+			self.reConnectNum = 0
+			if self.listener and self.listener.loginSuccess then
+	    		self.listener:loginSuccess()
+	    	end
+	    	if self.notSuccessMsg then
+	    		self:sendNoPack(self.notSuccessMsg)
+	    		self.notSuccessMsg = nil
+	    	end
+		else
+			print("msgObj.connectContent=",tostring(msgObj.connectContent))
+			zGlobal.toLoginScene()
+		end
     else
     	local callback = self.callback_tbl[msgId]
 		if callback then

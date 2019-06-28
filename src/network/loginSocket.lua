@@ -75,15 +75,20 @@ function M:deal_msgs()
 end
 
 function M:recv()
+	if self.isClose then
+		return
+	end
 	local reads, writes = socket.select({self.sock}, {}, 0)
 	if #reads == 0 then
-		--print("no reads")
 		return
 	end
 
+
 	local r, s = self.sock:receive("*l")
+	print("recv s=", tostring(s))
 	if s == "closed" then
-		self:on_close()
+		zGlobal.showTips("server not open")
+		self:close()
 		return
 	end
 		
@@ -102,11 +107,8 @@ function M:setListener(value)
 end
 
 function M:close()
+	--self.isClose = true
 	self.sock:close()
-end
-
-function M:on_close()
-
 end
 
 return M

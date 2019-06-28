@@ -11,6 +11,40 @@ local client = require("network.client")
 --zGlobal.serverIp = "127.0.0.1"
 zGlobal.serverIp = "149.28.65.61"
 
+zGlobal.showTips = function(content)
+    local curScene = cc.Director:getInstance():getRunningScene()
+    local label = cc.Label:createWithTTF(content, "arial.ttf", 50)
+    label:setString(content)
+    curScene:addChild(label, 100)
+    label:setAnchorPoint(cc.p(0.5, 0.5))
+    label:setPosition(cc.p(display.width/2, display.height/2))
+    label:setColor(cc.c3b(255,0,0))
+    local function endFuc(node)
+        label:removeFromParent(true)
+    end
+    label:runAction( cc.Sequence:create(cc.MoveBy:create(1.5, cc.p(0,200)) ,cc.CallFunc:create(endFuc)))
+end
+
+zGlobal.delayCallBack = function(callBack, time)
+	local curScene = cc.Director:getInstance():getRunningScene()
+	local node = cc.Node:create()
+	curScene:addChild(node)
+	local function endFuc(node)
+		print("zGlobal.delayCallBack 22")
+        node:removeFromParent(true)
+        callBack()
+    end
+    print("zGlobal.delayCallBack 11")
+    node:runAction( cc.Sequence:create(cc.DelayTime:create(1),cc.CallFunc:create(endFuc)))
+end
+
+zGlobal.toLoginScene = function()
+	local loginScene = LoginScene.new()
+	local scene = cc.Scene:create()
+	scene:addChild(loginScene)
+	cc.Director:getInstance():replaceScene(scene)
+end
+
 zGlobal.token = {
     server = "sample",
     user = "hello",

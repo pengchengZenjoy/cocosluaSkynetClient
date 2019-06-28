@@ -121,6 +121,7 @@ function FIRScene:addExitBtn()
     --按钮的回调函数
     btn:addTouchEventListener(function(sender, eventType)
         if (0 == eventType) then
+            print("touch exitBtn")
             if self.isSendExitRoom then
                 return
             end
