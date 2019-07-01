@@ -110,7 +110,8 @@ end
 function RoomListScene:testHttp()
     local xhr = cc.XMLHttpRequest:new()
     xhr.responseType = cc.XMLHTTPREQUEST_RESPONSE_STRING
-    xhr:open("GET", "http://127.0.0.1:8111/?color=blue&text=abc")
+    --xhr:open("GET", "http://127.0.0.1:8111/?color=blue&text=abc")
+    xhr:open("GET", "http://127.0.0.1:8080/testPhp/index.php?fname=Peter&age=18")
 
     local function onReadyStateChanged()
         if xhr.readyState == 4 and (xhr.status >= 200 and xhr.status < 207) then
