@@ -13,11 +13,23 @@ message S2CMsg {
     S_PLAYCHESS = 7;
     S_PLAYRESULT = 8;
     S_EXITROOM = 9;
+    CALLLANDLORD = 10;
+    GAMEERROR = 11;
+    GAMESTART = 12;
+    DEALPOKER = 13;
+    PLAYPOKER = 14;
   }
-  required msgType msgId = 1;
   message ChatInfoPb {
     required string chatContent = 1;
   }
+  message PokerInfoPb {
+    required int32 num = 1;
+    required int32 type = 2;
+  }
+  message PlayerInfoPb {
+    required string userId = 1;
+  }
+  required msgType msgId = 1;
   repeated ChatInfoPb chatList = 2;
   optional string connectContent = 3;
   repeated int32 roomList = 4;
@@ -25,4 +37,8 @@ message S2CMsg {
   optional string userId = 6;
   optional int32 chessIndexX = 7;
   optional int32 chessIndexY = 8;
+  optional string errorContent = 9;
+  repeated PokerInfoPb pokerList = 10;
+  optional string nextUserId = 11;
+  repeated PlayerInfoPb playList = 12;
 }

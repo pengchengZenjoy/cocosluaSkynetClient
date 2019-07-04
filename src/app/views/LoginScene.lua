@@ -7,13 +7,14 @@ local RoomListScene = require("app.views.RoomListScene")
 local crypt = skynetCrypt
 local client = require("network.client")
 
---zGlobal.serverIp = "10.7.2.180"
+zGlobal.serverIp = "10.7.2.180"
 --zGlobal.serverIp = "127.0.0.1"
-zGlobal.serverIp = "149.28.65.61"
+--zGlobal.serverIp = "149.28.65.61"
+--zGlobal.serverIp = "39.105.69.135"
 
 zGlobal.showTips = function(content)
     local curScene = cc.Director:getInstance():getRunningScene()
-    local label = cc.Label:createWithTTF(content, "arial.ttf", 50)
+    local label = cc.Label:createWithTTF(content, "mini.TTF", 50)
     label:setString(content)
     curScene:addChild(label, 100)
     label:setAnchorPoint(cc.p(0.5, 0.5))

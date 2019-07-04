@@ -90,7 +90,7 @@ function M:_createSock()
    	end
    	sock:settimeout(0)
 	local n,e = sock:connect(self.ip, self.port)
-	print("connect e=", e)
+	print("client connect e=", e)
 	self.sock = sock
 end
 
@@ -200,8 +200,8 @@ function M:recv()
 		print("socket empty", s)
         return
     end
-
-    print("recv data", #r)
+    print("client recv len", len)
+    print("client recv data", #r)
 end
 
 function M:split_pack()
@@ -226,7 +226,7 @@ function M:dispatch_one()
 		return
 	end
 	local data = table.remove(self.pack_list, 1)
-	print("split pack",#data)
+	print("client split pack",#data)
 	local msgId, msgObj = Packer.unpack(data)
 	if msgId == "CONNECTINFO" then
 		if msgObj.connectContent == "200 OK" then

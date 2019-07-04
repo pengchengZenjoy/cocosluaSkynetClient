@@ -10,14 +10,22 @@ message C2SMsg {
     GAMEREADY = 4;
     PLAYCHESS = 5;
     EXITROOM = 6;
+    CALLLANDLORD = 7;
+    PLAYPOKER = 8;
   }
   required msgType msgId = 1;
 
   message ChatInfoPb {
     required string chatContent = 1;
   }
+  message PokerInfoPb {
+    required int32 num = 1;
+    required int32 type = 2;
+  }
   optional ChatInfoPb chatInfo = 2;
   optional int32 roomId = 3;
   optional int32 chessIndexX = 4;
   optional int32 chessIndexY = 5;
+  optional bool isLandlord = 6;
+  repeated PokerInfoPb pokerList = 7;
 }

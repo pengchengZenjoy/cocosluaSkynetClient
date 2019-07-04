@@ -1,7 +1,9 @@
 local RoomListScene = class("RoomListScene", cc.Node)
 local LuaSock = require("app.views.LuaSock")
 local FIRScene = require("app.views.FIRScene")
+local LandlordScene = require("app.views.LandlordScene")
 local crypt = skynetCrypt
+local Socket = require "socket"
 
 function RoomListScene:ctor()
     self:onCreate()
@@ -40,9 +42,13 @@ function RoomListScene:onMessage(msgObj)
         self.roomList = roomList
         self:updateScrollView()
     elseif msgId == "ENTERROOMSUCCESS" then
-        local firScene = FIRScene.new()
+        local endTime = Socket.gettime()
+        print("ENTERROOMSUCCESS startTime=", self.startTime)
+        print("ENTERROOMSUCCESS endTime=", endTime)
+        print("ENTERROOMSUCCESS disTime=", (endTime-self.startTime))
+        local layer = LandlordScene.new()
         local scene = cc.Scene:create()
-        scene:addChild(firScene)
+        scene:addChild(layer)
         cc.Director:getInstance():replaceScene(scene)
     elseif msgId == "ENTERROOMFAIL" then
         zGlobal.showTips("player full")
@@ -93,6 +99,7 @@ function RoomListScene:updateScrollView()
                 }
                 zGlobal.sockClient:send(msg)
                 self.isSendMsg = true
+                self.startTime = Socket.gettime()
             elseif (1 == eventType)  then
                 --print("move")
             elseif  (2== eventType) then
